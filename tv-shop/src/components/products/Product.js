@@ -8,7 +8,10 @@ function Product(props) {
 
     return (<React.Fragment>
         <div>
-            <img src="./images/televisor_1000.jpg" width="50" height="50"></img>
+            {!props.imagen&&<img src="./images/televisor_1000.jpg" width="180" height="180"></img>}
+    
+            {props.imagen&&(<img src={URL.createObjectURL(props.imagen)} width="180" height="180"></img>)}
+            
             <p>{nombre}</p>
             <h3>Nombre del producto: {props.nombre}</h3>
             <p>Descripcion: {props.descripcion}</p>

@@ -2,12 +2,13 @@ import React from 'react';
 import { ProductsList } from './products/ProductsList.js'
 import { ModalProduct } from './ModalProduct/ModalProduct';
 import { Form } from './Form';
-import { FormProductContex } from './context/FormProductContex'
+import { FormProductContex } from './context/FormProductContex';
+import { ViewProduct } from './products/ViewProducts.js';
+
 
 function AppUI() {
 
-    const { openFormProduct } = React.useContext(FormProductContex)
-
+    const { openFormProduct, openProduct } = React.useContext(FormProductContex)
 
     return (
 
@@ -18,6 +19,9 @@ function AppUI() {
                 <Form />
             </ModalProduct>)}
 
+            {openProduct && (<ModalProduct>
+                <ViewProduct />
+            </ModalProduct>)}
 
         </React.Fragment>
     )
