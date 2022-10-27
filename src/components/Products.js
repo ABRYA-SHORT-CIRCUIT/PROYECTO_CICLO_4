@@ -27,6 +27,8 @@ function Products() {
                         </div>
                     </div>
                 </div>
+
+                {/* Producto 1 context list */}
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
@@ -54,6 +56,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -79,6 +82,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -104,6 +108,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -129,6 +134,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -154,6 +160,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -179,6 +186,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -204,6 +212,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -229,6 +238,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-4">
                             <div className="item">
                                 <div className="thumb">
@@ -254,6 +264,7 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+
                         <div className="col-lg-12">
                             <div className="pagination">
                                 <ul>

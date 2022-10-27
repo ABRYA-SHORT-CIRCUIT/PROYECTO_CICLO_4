@@ -2,7 +2,7 @@ function SingleProduct() {
     return (
         <div className="single-product-main">
 
-
+            {/* View product */}
             <div className="page-heading" id="top">
                 <div className="container">
                     <div className="row">

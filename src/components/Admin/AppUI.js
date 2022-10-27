@@ -1,9 +1,9 @@
 import React from 'react';
-import { ProductsList } from './products/ProductsList.js'
-import { ModalProduct } from './ModalProduct/ModalProduct';
+import { ProductsList } from '../products/ProductsList.js'
+import { ModalProduct } from '../ModalProduct/ModalProduct';
 import { Form } from './Form';
-import { FormProductContex } from './context/FormProductContex';
-import { ViewProduct } from './products/ViewProducts.js';
+import { FormProductContex } from '../context/FormProductContex';
+import { ViewProduct } from '../products/ViewProducts.js';
 
 
 function AppUI() {

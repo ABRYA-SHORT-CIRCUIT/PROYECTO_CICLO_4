@@ -1,7 +1,7 @@
 import React from "react";
-import { ListContext } from '../components/context/ListContext';
-import { Button } from './Button/Button';
-import { FormProductContex } from './context/FormProductContex';
+import { ListContext } from '../context/ListContext';
+import { Button } from '../Button/Button';
+import { FormProductContex } from '../context/FormProductContex';
 import { useAlert } from 'react-alert';
 
 function Form() {

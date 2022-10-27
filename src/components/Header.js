@@ -24,14 +24,17 @@ function Header() {
                                         <li><Link to={{ pathname: "/contact-us" }}>Contáctanos</Link></li>
                                     </ul>
                                 </li>
+
                                 <li className="submenu">
-                                    <a href="/">Admin</a>
+                                    <a href="/">Admin</a> {/* ruta para productsList-boton crear */}
+                                    
                                     <ul>
-                                        <li><a href="/">Agregar artículo</a></li>
-                                        <li><a href="/">Lista de artículos</a></li>
-                                        <li><a href="/">Consultar ventas</a></li>
+                                        <li><a href="/">Agregar artículo</a></li> {/* ruta para form */}
+                                        <li><a href="/">Lista de artículos</a></li> {/* ruta para productLis */}
+                                        <li><a href="/">Consultar ventas</a></li> 
                                     </ul>
                                 </li>
+
                                 <li className="scroll-to-section"><a href="#explore">Ingresar</a></li>
                             </ul>
                             <a className='menu-trigger' href="/">
