@@ -24,12 +24,12 @@ function ProductItemList(props) {
 
     return (
         <React.Fragment>
-            <div className="container">
-                <li>
-                    <Product nombre={props.nombre} precio={props.precio} imagen={props.imagen} />
-                    <Button eventoClickBoton={viewProduct} color="btn btn-warning" nombreBoton="Ver Detalle"></Button>
-                </li>
+
+            <div className="col-lg-4">
+                <Product nombre={props.nombre} precio={props.precio} imagen={props.imagen} />
+                <Button eventoClickBoton={viewProduct} color="btn btn-warning" nombreBoton="Ver Detalle"></Button>
             </div>
+
         </React.Fragment>
     )
 }
