@@ -1,17 +1,16 @@
 import React from 'react';
-import './App.css';
-import { ListProvider } from './components/context/ListContext';
-import { FormProductProvider } from './components/context/FormProductContex';
-import {AppUI} from './components/AppUI';
+import { ListProvider } from '../context/ListContext';
+import { FormProductProvider } from '../context/FormProductContex';
+import { ProductsListAdmin } from '../productsAdmin/ProductsListAdmin';
 
-function App() {
+function AppAdmin() {
   return (
     <ListProvider>
       <FormProductProvider>
-        <AppUI />
+        <ProductsListAdmin />
       </FormProductProvider>
     </ListProvider>
   );
 }
 
-export default App;
+export {AppAdmin};

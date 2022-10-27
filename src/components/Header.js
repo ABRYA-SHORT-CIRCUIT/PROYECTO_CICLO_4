@@ -26,7 +26,8 @@ function Header() {
                                 </li>
 
                                 <li className="submenu">
-                                    <a href="/">Admin</a> {/* ruta para productsList-boton crear */}
+                                    <Link to={{ pathname: "/products-list-admin" }}>Admin</Link>
+                                    {/*<a href="/">Admin</a>  ruta para productsList-boton crear */}
                                     
                                     <ul>
                                         <li><a href="/">Agregar artículo</a></li> {/* ruta para form */}

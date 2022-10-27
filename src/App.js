@@ -12,6 +12,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import {AppAdmin} from './components/Admin/AppAdmin'
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/single-product" element={<SingleProduct />} />
+          <Route path="/products-list-admin" element={<AppAdmin />} />
         </Routes>
+
         <Footer></Footer>
       </BrowserRouter>
     </div>
