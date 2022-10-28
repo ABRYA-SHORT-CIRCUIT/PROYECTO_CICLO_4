@@ -48,14 +48,17 @@ function ListProvider(props) {
         precio: '2580'
     }
 
+
+
     const [viewProductsState, setViewProductsState] = React.useState(product);
 
+    const [booleanState, setBooleanState] = React.useState(false);
 
     return (
         //Proveedor
         <ListContext.Provider value={{
             guardarProducto, arrayProductsState, setArrayProductsState,
-            viewProductsState, setViewProductsState
+            viewProductsState, setViewProductsState, booleanState, setBooleanState
         }}>
             {props.children}
         </ListContext.Provider>
