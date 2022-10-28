@@ -51,13 +51,14 @@ function ProductsListAdmin() {
                 <div className="container">
                     <div className="row">
 
-                        
-                            {arrayProducts.map(televisor => (
-                                <ProductItemList key={televisor.nombre} nombre={televisor.nombre} descripcion={televisor.descripcion}
-                                    caracteristicas={televisor.caracteristicas} precio={televisor.precio} imagen={televisor.imagen} />
-                            ))
-                            }
-                        
+
+                        {arrayProducts.map(televisor => (
+                            <ProductItemList key={televisor.nombre} nombre={televisor.nombre} descripcion={televisor.descripcion}
+                                caracteristicas={televisor.caracteristicas} precio={televisor.precio} imagen={televisor.imagen}
+                                id={televisor.id} />
+                        ))
+                        }
+
 
 
                         <div className="col-lg-12">

@@ -5,3 +5,18 @@
 .NombreColor2{
     background-color: blue;
 }
+
+.ColorEtiqueta{
+    color: black;
+
+}
+
+.main-border-button a {
+    font-size: 13px;
+    color: rgb(16, 16, 16);
+    border: 1px solid #fff;
+    padding: 12px 25px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all .3s;
+}

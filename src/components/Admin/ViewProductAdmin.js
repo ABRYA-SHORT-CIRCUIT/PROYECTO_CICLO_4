@@ -5,15 +5,17 @@ import { FormProductProvider } from '../context/FormProductContex';
 import { ViewProduct } from "../productsAdmin/ViewProducts";
 
 
-function ViewProductAdmin(){
+function ViewProductAdmin() {
     return (
         <ListProvider>
-        <FormProductProvider>
-            <ViewProduct />
-        </FormProductProvider>
+            <FormProductProvider>
+                <ViewProduct />
+            </FormProductProvider>
         </ListProvider>
+
+
     );
 }
 
 
-export {ViewProductAdmin}
+export { ViewProductAdmin }
