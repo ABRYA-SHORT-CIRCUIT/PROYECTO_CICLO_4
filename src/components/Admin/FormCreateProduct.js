@@ -6,13 +6,6 @@ import { useAlert } from 'react-alert';
 
 function FormCreateProduct() {
 
-    //Funcion que le da acción al Boton para cerrar formulario
-    const { setOpenFormProduct } = React.useContext(FormProductContex)
-
-    function closeForm() {
-        setOpenFormProduct(false);
-    }
-
     //Funcion para guardar producto
     const { guardarProducto } = React.useContext(ListContext)
 
@@ -21,13 +14,11 @@ function FormCreateProduct() {
     const [selectImage, setSelectImage] = React.useState(null)
 
     const subirFormulario = (event) => {
-
-
+        console.log("subir formulario");
         const nombreIngresado = event.target.nombre.value;
         const descripcionIngresada = event.target.descripcion.value;
         const caracteristicasIngresadas = event.target.caracteristicas.value;
         const precioIngresado = event.target.precio.value;
-
 
         const newProduct = {
             nombre: nombreIngresado,
@@ -36,12 +27,9 @@ function FormCreateProduct() {
             precio: precioIngresado,
             imagen: selectImage
         }
-
+        console.log("Nuevo producto " + newProduct);
         guardarProducto(newProduct);
-        closeForm();
-
         alert.success("Producto creado con exito");
-
     }
 
     return (
@@ -60,7 +48,7 @@ function FormCreateProduct() {
                         </div>
                     </div>
                 </div>
-                <form onSubmit={subirFormulario}>
+                <form>
 
                     <section className="section" id="product">
                         <div className="container">
@@ -106,7 +94,7 @@ function FormCreateProduct() {
                     </section>
                     <br></br>
 
-                    <div className="main-border-button"><button type="submit">Guardar Producto</button></div>
+                    <div className="main-border-button"><button onClick={subirFormulario}>Guardar Producto</button></div>
     
                 </form>
 

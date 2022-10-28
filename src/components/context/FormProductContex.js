@@ -8,9 +8,6 @@ const FormProductContex = React.createContext();
 
 function FormProductProvider(props){
     //Estado-retorna un array de dos posiciones
-
-
-
     return(
         <FormProductContex.Provider value={{}}>
             {props.children}</FormProductContex.Provider>

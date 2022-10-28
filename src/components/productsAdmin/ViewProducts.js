@@ -9,12 +9,6 @@ function ViewProduct() {
 
     const { id } = useParams();
 
-
-
-
-
-
-
     return (
         <React.Fragment>
             <div className="single-product-main">
@@ -59,7 +53,7 @@ function ViewProduct() {
                                     </div>
                                     <div className="quantity-content">
                                         <div className="left-content">
-                                            <h6>No. of Orders</h6>
+                                            <h6>No. of Stock</h6>
                                         </div>
                                         <div className="right-content">
                                             <div className="quantity buttons_added">
@@ -71,7 +65,6 @@ function ViewProduct() {
                                         <h4>opciones</h4>
                                         <div className="main-border-button"><a href="/">Editar Producto</a></div>
                                         <div className="main-border-button"><a href="/">Eliminar Producto</a></div>
-                                        <div><Button nombreBoton="Atras" color="btn btn-warning"></Button></div>
                                     </div>
                                 </div>
                             </div>

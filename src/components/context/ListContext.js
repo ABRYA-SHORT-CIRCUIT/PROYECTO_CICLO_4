@@ -6,36 +6,7 @@ const ListContext = React.createContext();
 
 function ListProvider(props) {
 
-    const arrayProducts = [
-        {
-            id: 1,
-            nombre: 'TvAntiguo',
-            descripcion: 'Antiguo',
-            caracteristicas: '16 pulgadas',
-            precio: '16000000'
-        },
-        {
-            id: 2,
-            nombre: 'Tv-Samsung',
-            descripcion: 'Samsumg tv',
-            caracteristicas: '32 pulgadas',
-            precio: '26000000'
-        },
-        {
-            id: 3,
-            nombre: 'Smart LG',
-            descripcion: 'Smart tv',
-            caracteristicas: '40 pulgadas',
-            precio: '26580000'
-        },
-        {
-            id: 4,
-            nombre: 'Televisor prueba',
-            descripcion: 'Smart tv',
-            caracteristicas: '40 pulgadas',
-            precio: '26580000'
-        }
-    ]
+    const arrayProducts = JSON.parse(localStorage.getItem("saveData"))
 
     //Estado 1
     const [arrayProductsState, setArrayProductsState] = React.useState(arrayProducts);
@@ -44,6 +15,8 @@ function ListProvider(props) {
     function guardarProducto(newProduct) {
         const copyarrayProducts = [newProduct].concat(arrayProductsState)
         setArrayProductsState(copyarrayProducts)
+        localStorage.setItem("saveData", JSON.stringify(arrayProductsState))
+        console.log(arrayProductsState)
     }
 
     //Estado para mostrar objeto
@@ -53,8 +26,6 @@ function ListProvider(props) {
         caracteristicas: 'test',
         precio: '2580'
     }
-
-
 
     const [viewProductsState, setViewProductsState] = React.useState(product);
 
