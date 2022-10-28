@@ -4,15 +4,19 @@ const ListContext = React.createContext();
 
 function ListProvider(props) {
 
-    const arrayProducts = JSON.parse(localStorage.getItem("saveData"))
 
+    let arrayProducts = JSON.parse(localStorage.getItem("saveData"))
+    if (!arrayProducts) {
+        localStorage.setItem("saveData", JSON.stringify([{ "id": 1, "nombre": "TvAntiguo", "descripcion": "Antiguo", "caracteristicas": "16 pulgadas", "precio": "16000000" }, { "id": 2, "nombre": "Tv-Samsung", "descripcion": "Samsumg tv", "caracteristicas": "32 pulgadas", "precio": "26000000" }, { "id": 3, "nombre": "Smart LG", "descripcion": "Smart tv", "caracteristicas": "40 pulgadas", "precio": "26580000" }, { "id": 4, "nombre": "Televisor prueba", "descripcion": "Smart tv", "caracteristicas": "40 pulgadas", "precio": "26580000" }]))
+        arrayProducts = JSON.parse(localStorage.getItem("saveData"));
+    }
     //Estado 1
     const [arrayProductsState, setArrayProductsState] = React.useState(arrayProducts);
     //Imagen
     const [images, setImages] = React.useState([])
     const [imageUrls, setImageUrls] = React.useState([])
 
-    function onImageChange(e){
+    function onImageChange(e) {
         setImages([...e.target.files]);
     }
 
@@ -24,32 +28,21 @@ function ListProvider(props) {
         const ids = copyarrayProducts.map(object => {
             return object.id;
         });
-        console.log(ids); // 👉️ [1, 7, 3, 14]
 
         const max = Math.max(...ids);
-        console.log(max); // 👉️ 14
         newProduct.id = max + 1;
         copyarrayProducts.push(newProduct)
         setArrayProductsState(copyarrayProducts)
         localStorage.setItem("saveData", JSON.stringify(copyarrayProducts))
-        console.log("Fin de guardarProducto" + arrayProductsState)
     }
 
-    //Estado para mostrar objeto
-    const product = {
-        nombre: 'tv test',
-        descripcion: 'test',
-        caracteristicas: 'test',
-        precio: '2580'
-    }
-
-    const [viewProductsState, setViewProductsState] = React.useState(product);
+    const [viewProductsState, setViewProductsState] = React.useState({});
 
     return (
         //Proveedor
         <ListContext.Provider value={{
             guardarProducto, arrayProductsState, setArrayProductsState,
-            viewProductsState, setViewProductsState,onImageChange
+            viewProductsState, setViewProductsState, onImageChange, imageUrls, images, setImageUrls
         }}>
             {props.children}
         </ListContext.Provider>

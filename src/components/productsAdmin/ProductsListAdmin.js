@@ -85,14 +85,7 @@ function ProductsListAdmin() {
 
                     </div>
                 </div>  {/* fin container */}
-
-
             </section>
-
-            <div>
-                <Button eventoClickBoton={openForm} nombreBoton="Crear Producto" />
-            </div>
-
         </div>
 
     )

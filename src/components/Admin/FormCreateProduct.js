@@ -3,15 +3,28 @@ import { ListContext } from '../context/ListContext';
 import { Button } from '../Button/Button';
 import { FormProductContex } from '../context/FormProductContex';
 import { useAlert } from 'react-alert';
+import { useEffect } from "react";
 
 function FormCreateProduct() {
 
     //Funcion para guardar producto
-    const { guardarProducto ,onImageChange} = React.useContext(ListContext)
+    const { guardarProducto, onImageChange, imageUrls, images, setImageUrls } = React.useContext(ListContext)
 
     const alert = useAlert()
 
 
+
+    useEffect(() => {
+        if (images.length < 1) return;
+        const newImagesUrl = [];
+        images.forEach(image => {
+            newImagesUrl.push(URL.createObjectURL(image));
+
+            setImageUrls(newImagesUrl)
+
+        });
+
+    }, [images])
 
     const subirFormulario = (event) => {
         event.preventDefault();
@@ -20,14 +33,14 @@ function FormCreateProduct() {
         const descripcionIngresada = event.target.descripcion.value;
         const caracteristicasIngresadas = event.target.caracteristicas.value;
         const precioIngresado = event.target.precio.value;
-    
 
+        console.log("contenedino de img"+imageUrls[0]);
         const newProduct = {
             nombre: nombreIngresado,
             descripcion: descripcionIngresada,
             caracteristicas: caracteristicasIngresadas,
             precio: precioIngresado,
-            imagen: "test"
+            imagen: imageUrls[0]
         }
         console.log("Nuevo producto " + JSON.stringify(newProduct));
         guardarProducto(newProduct);
@@ -86,8 +99,9 @@ function FormCreateProduct() {
                                                 type="file" className="form-control" id="exampleInputPassword1"
                                                 placeholder="Ingrese imagen del producto"></input>
                                             <div className="left-images">
+                                                {imageUrls.map(imageSrc => <h1>Foto<img src={imageSrc} /></h1>)}
 
-                                                {/* {selectImage && (<img src={URL.createObjectURL(selectImage)} ></img>)} */}
+
                                             </div>
                                         </div>
                                     </div>
