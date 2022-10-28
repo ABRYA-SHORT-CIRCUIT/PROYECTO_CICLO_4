@@ -30,7 +30,7 @@ function Header() {
                                     {/*<a href="/">Admin</a>  ruta para productsList-boton crear */}
                                     
                                     <ul>
-                                        <li><Link to={{ pathname: "/products-list-admin" }}>Agregar artículo</Link></li> {/* ruta para form */}
+                                        <li><Link to={{ pathname: "/create-product" }}>Agregar artículo</Link></li> {/* ruta para form */}
                                         <li><Link to={{ pathname: "/products-list-admin" }}>Lista de artículos</Link></li> {/* ruta para productLis */}
                                         <li><a href="/">Consultar ventas</a></li> 
                                     </ul>

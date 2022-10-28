@@ -14,16 +14,13 @@ import {
 } from "react-router-dom";
 import { AppAdmin } from './components/Admin/AppAdmin'
 import { ViewProductAdmin } from './components/Admin/ViewProductAdmin'
-// import {ListProvider} from './components/context/ListContext';
-// import {FormProductProvider} from './components/context/FormProductContex'
+import {CreateProduct} from './components/Admin/CreateProduct'
+
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
-        {/* <ListProvider>
-          <FormProductProvider> */}
 
             <Header className="App-header"></Header>
             <Routes>
@@ -32,15 +29,13 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/contact-us" element={<Contact />} />
               <Route path="/single-product" element={<SingleProduct />} />
-              <Route path="/products-list-admin" element={<AppAdmin />} />
 
+              <Route path="/products-list-admin" element={<AppAdmin />} />
+              <Route path="/create-product" element={<CreateProduct />} />
               <Route path="/view-product-admin" element={<ViewProductAdmin />} />
             </Routes>
 
             <Footer></Footer>
-{/* 
-          </FormProductProvider>
-        </ListProvider> */}
       </BrowserRouter>
     </div>
   );
