@@ -7,27 +7,29 @@ import { useAlert } from 'react-alert';
 function FormCreateProduct() {
 
     //Funcion para guardar producto
-    const { guardarProducto } = React.useContext(ListContext)
+    const { guardarProducto ,onImageChange} = React.useContext(ListContext)
 
     const alert = useAlert()
 
-    const [selectImage, setSelectImage] = React.useState(null)
+
 
     const subirFormulario = (event) => {
+        event.preventDefault();
         console.log("subir formulario");
         const nombreIngresado = event.target.nombre.value;
         const descripcionIngresada = event.target.descripcion.value;
         const caracteristicasIngresadas = event.target.caracteristicas.value;
         const precioIngresado = event.target.precio.value;
+    
 
         const newProduct = {
             nombre: nombreIngresado,
             descripcion: descripcionIngresada,
             caracteristicas: caracteristicasIngresadas,
             precio: precioIngresado,
-            imagen: selectImage
+            imagen: "test"
         }
-        console.log("Nuevo producto " + newProduct);
+        console.log("Nuevo producto " + JSON.stringify(newProduct));
         guardarProducto(newProduct);
         alert.success("Producto creado con exito");
     }
@@ -48,7 +50,7 @@ function FormCreateProduct() {
                         </div>
                     </div>
                 </div>
-                <form>
+                <form onSubmit={subirFormulario}>
 
                     <section className="section" id="product">
                         <div className="container">
@@ -73,20 +75,21 @@ function FormCreateProduct() {
                                             placeholder="Ingrese descripcion del producto"></input>
                                         <div className="quote">
                                             <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Caracteristicas</label>
-                                            <input name="descripcion" type="text" className="form-control" id="exampleInputPassword1"
+                                            <input name="caracteristicas" type="text" className="form-control" id="exampleInputPassword1"
                                                 placeholder="Ingrese caracteristicas del producto"></input>
                                         </div>
 
                                         <div className="left-images">
-                                        <span><label htmlFor="exampleInputPassword1">Imagen</label></span>
-                                        <input name="imagenProducto" accept="imagen/png, imagen/jpeg"
-                                            onChange={(event) => {
-                                                console.log(event.target.files[0])
-                                                setSelectImage(event.target.files[0])
-                                            }}
-                                            type="file" className="form-control" id="exampleInputPassword1"
-                                            placeholder="Ingrese imagen del producto"></input>
-                                    </div>
+                                            <span><label htmlFor="exampleInputPassword1">Imagen</label></span>
+                                            <input name="imagenProducto" accept="imagen/png, imagen/jpeg"
+                                                onChange={onImageChange}
+                                                type="file" className="form-control" id="exampleInputPassword1"
+                                                placeholder="Ingrese imagen del producto"></input>
+                                            <div className="left-images">
+
+                                                {/* {selectImage && (<img src={URL.createObjectURL(selectImage)} ></img>)} */}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -94,8 +97,8 @@ function FormCreateProduct() {
                     </section>
                     <br></br>
 
-                    <div className="main-border-button"><button onClick={subirFormulario}>Guardar Producto</button></div>
-    
+                    <div className="main-border-button"><button type="submit">Guardar Producto</button></div>
+
                 </form>
 
             </div>

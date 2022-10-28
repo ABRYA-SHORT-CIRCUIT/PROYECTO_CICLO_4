@@ -10,13 +10,39 @@ function ListProvider(props) {
 
     //Estado 1
     const [arrayProductsState, setArrayProductsState] = React.useState(arrayProducts);
+    //Imagen
+    const [images, setImages] = React.useState([])
+    const [imageUrls, setImageUrls] = React.useState([])
+
+    function onImageChange(e){
+        setImages([...e.target.files]);
+    }
 
     //Guardar producto-exportamos al form y se usa
     function guardarProducto(newProduct) {
-        const copyarrayProducts = [newProduct].concat(arrayProductsState)
+
+
+        const copyarrayProducts = [...arrayProductsState]
+
+
+
+        const ids = copyarrayProducts.map(object => {
+            return object.id;
+        });
+        console.log(ids); // 👉️ [1, 7, 3, 14]
+
+        const max = Math.max(...ids);
+        console.log(max); // 👉️ 14
+
+        newProduct.id = max + 1;
+
+        copyarrayProducts.push(newProduct)
+
+
+
         setArrayProductsState(copyarrayProducts)
-        localStorage.setItem("saveData", JSON.stringify(arrayProductsState))
-        console.log(arrayProductsState)
+        localStorage.setItem("saveData", JSON.stringify(copyarrayProducts))
+        console.log("Fin de guardarProducto" + arrayProductsState)
     }
 
     //Estado para mostrar objeto
@@ -35,7 +61,7 @@ function ListProvider(props) {
         //Proveedor
         <ListContext.Provider value={{
             guardarProducto, arrayProductsState, setArrayProductsState,
-            viewProductsState, setViewProductsState
+            viewProductsState, setViewProductsState,onImageChange
         }}>
             {props.children}
         </ListContext.Provider>
