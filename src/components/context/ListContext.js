@@ -61,7 +61,7 @@ function ListProvider(props) {
         //Proveedor
         <ListContext.Provider value={{
             guardarProducto, arrayProductsState, setArrayProductsState,
-            viewProductsState, setViewProductsState,onImageChange
+            viewProductsState, setViewProductsState,onImageChange,imageUrls,images,setImageUrls
         }}>
             {props.children}
         </ListContext.Provider>
