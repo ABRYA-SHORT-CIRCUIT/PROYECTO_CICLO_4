@@ -1,11 +1,8 @@
 import React from 'react';
-import './color.css';
 
 function Product(props) {
 
     return (<React.Fragment>
-
-        
             <div className="item">
                 <div className="thumb">
                     <div className="hover-content">
@@ -15,8 +12,8 @@ function Product(props) {
                         </ul>
 
                     </div>
-                    {!props.imagen && <img src="assets/images/televisor_1000.jpg"></img>}
-                    {props.imagen && (<img src={URL.createObjectURL(props.imagen)} ></img>)}
+                    {!props.imagen && <img src="assets/images/televisor_1000.jpg" alt="foto televisor"></img>}
+                    {/*{props.imagen && (<img src={URL.createObjectURL(props.imagen)} ></img>)} */}
                 </div>
 
                 <div className="down-content">
@@ -31,9 +28,6 @@ function Product(props) {
                     </ul>
                 </div>
             </div>
-       
-
-
     </React.Fragment>)
 }
 

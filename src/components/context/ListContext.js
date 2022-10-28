@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const ListContext = React.createContext();
 
 function ListProvider(props) {
@@ -21,10 +19,7 @@ function ListProvider(props) {
     //Guardar producto-exportamos al form y se usa
     function guardarProducto(newProduct) {
 
-
         const copyarrayProducts = [...arrayProductsState]
-
-
 
         const ids = copyarrayProducts.map(object => {
             return object.id;
@@ -33,13 +28,8 @@ function ListProvider(props) {
 
         const max = Math.max(...ids);
         console.log(max); // 👉️ 14
-
         newProduct.id = max + 1;
-
         copyarrayProducts.push(newProduct)
-
-
-
         setArrayProductsState(copyarrayProducts)
         localStorage.setItem("saveData", JSON.stringify(copyarrayProducts))
         console.log("Fin de guardarProducto" + arrayProductsState)
@@ -54,8 +44,6 @@ function ListProvider(props) {
     }
 
     const [viewProductsState, setViewProductsState] = React.useState(product);
-
-
 
     return (
         //Proveedor
