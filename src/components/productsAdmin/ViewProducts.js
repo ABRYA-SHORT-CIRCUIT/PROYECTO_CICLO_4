@@ -1,20 +1,25 @@
 import React from "react";
 import { Button } from "../Button/Button";
 import { ListContext } from '../context/ListContext';
-import { FormProductContex } from '../context/FormProductContex';
+import { useParams } from 'react-router-dom'
 
 function ViewProduct() {
 
-    const { viewProductsState } = React.useContext(ListContext);
-    const { setProduct } = React.useContext(FormProductContex);
+    const { arrayProductsState } = React.useContext(ListContext);
 
-    function closeProduct() {
-        setProduct(false);
-    }
+    const { id } = useParams();
+
+
+
+
+
+
 
     return (
         <React.Fragment>
             <div className="single-product-main">
+
+                {/* View product */}
                 <div className="page-heading" id="top">
                     <div className="container">
                         <div className="row">
@@ -28,20 +33,19 @@ function ViewProduct() {
                     </div>
                 </div>
 
-                {/* View product */}
                 <section className="section" id="product">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="left-images">
-                                    {!viewProductsState.imagen && <img src="assets/images/televisor_1000.jpg"></img>}
-                                    {viewProductsState.imagen && (<img src={URL.createObjectURL(viewProductsState.imagen)} ></img>)}
+                                    {!arrayProductsState[id - 1].imagen && <img src="assets/images/televisor_1000.jpg"></img>}
+                                    {arrayProductsState[id - 1].imagen && (<img src={URL.createObjectURL(arrayProductsState[id - 1].imagen)} ></img>)}
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="right-content">
-                                    <h4>{viewProductsState.nombre}</h4>
-                                    <span className="price">$ {viewProductsState.precio}</span>
+                                    <h4>{arrayProductsState[id - 1].nombre}</h4>
+                                    <span className="price">$ {arrayProductsState[id - 1].precio}</span>
                                     <ul className="stars">
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
@@ -49,9 +53,9 @@ function ViewProduct() {
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
                                     </ul>
-                                    <span>{viewProductsState.descripcion}</span>
+                                    <span>{arrayProductsState[id - 1].descripcion}</span>
                                     <div className="quote">
-                                        <i className="fa fa-quote-left"></i><p>{viewProductsState.caracteristicas}</p>
+                                        <i className="fa fa-quote-left"></i><p>{arrayProductsState[id - 1].caracteristicas}</p>
                                     </div>
                                     <div className="quantity-content">
                                         <div className="left-content">
@@ -67,7 +71,7 @@ function ViewProduct() {
                                         <h4>opciones</h4>
                                         <div className="main-border-button"><a href="/">Editar Producto</a></div>
                                         <div className="main-border-button"><a href="/">Eliminar Producto</a></div>
-                                        <div><Button nombreBoton="Atras" eventoClickBoton={closeProduct} color="btn btn-warning"></Button></div>
+                                        <div><Button nombreBoton="Atras" color="btn btn-warning"></Button></div>
                                     </div>
                                 </div>
                             </div>

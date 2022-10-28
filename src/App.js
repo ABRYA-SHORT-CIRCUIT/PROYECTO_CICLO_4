@@ -14,34 +14,34 @@ import {
 } from "react-router-dom";
 import { AppAdmin } from './components/Admin/AppAdmin'
 import { ViewProductAdmin } from './components/Admin/ViewProductAdmin'
-// import {ListProvider} from './components/context/ListContext';
-// import {FormProductProvider} from './components/context/FormProductContex'
+
+
 
 function App() {
   return (
     <div className="App">
+
       <BrowserRouter>
 
-        {/* <ListProvider>
-          <FormProductProvider> */}
 
-            <Header className="App-header"></Header>
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/contact-us" element={<Contact />} />
-              <Route path="/single-product" element={<SingleProduct />} />
-              <Route path="/products-list-admin" element={<AppAdmin />} />
 
-              <Route path="/view-product-admin" element={<ViewProductAdmin />} />
-            </Routes>
+        <Header className="App-header"></Header>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/contact-us" element={<Contact />} />
+          <Route path="/single-product" element={<SingleProduct />} />
+          <Route path="/products-list-admin" element={<AppAdmin />} />
+          <Route path="/view-product-admin/:id" element={<ViewProductAdmin />} />
 
-            <Footer></Footer>
-{/* 
-          </FormProductProvider>
-        </ListProvider> */}
+
+        </Routes>
+
+        <Footer></Footer>
+
       </BrowserRouter>
+
     </div>
   );
 }
