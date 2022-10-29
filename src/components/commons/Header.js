@@ -14,9 +14,9 @@ function Header() {
                                 <li className="scroll-to-section"><a href="#men">Samsung</a></li>
                                 <li className="scroll-to-section"><a href="#women">LG</a></li>
                                 <li className="scroll-to-section"><a href="#kids">Kalley</a></li>
+                                <li className="scroll-to-section"><a href="#kids">Otras Marcas</a></li>
                                 <li className="submenu">
                                     <a href="/">Menú</a>
-                                    {/*<a href="javascript:;">Pages</a>*/}
                                     <ul>
                                         <li><Link to={{ pathname: "/about" }}>Nosotros</Link></li>
                                         <li><Link to={{ pathname: "/products" }}>Productos</Link></li>
@@ -25,10 +25,10 @@ function Header() {
                                     </ul>
                                 </li>
                                 <li className="submenu">
-                                    <a href="/">Admin</a>
+                                    <Link to={{ pathname: "/products-list-admin" }}>Admin</Link>
                                     <ul>
-                                        <li><a href="/">Agregar artículo</a></li>
-                                        <li><a href="/">Lista de artículos</a></li>
+                                        <li><Link to={{ pathname: "/create-product" }}>Agregar artículo</Link></li> {/* ruta para form */}
+                                        <li><Link to={{ pathname: "/products-list-admin" }}>Lista de artículos</Link></li> {/* ruta para productLis */}
                                         <li><a href="/">Consultar ventas</a></li>
                                     </ul>
                                 </li>

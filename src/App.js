@@ -1,12 +1,12 @@
 import './App.css';
 
-import Header from './components/Header'; //Include Header
-import Footer from './components/Footer';
-import Home from './components/Home'
-import About from './components/About'
-import Products from './components/Products'
-import Contact from './components/Contact'
-import SingleProduct from './components/SingleProduct'
+import Header from './components/commons/Header'; //Include Header
+import Footer from './components/commons/Footer';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Products from './components/Products/Products';
+import Contact from './components/Contact';
+import SingleProduct from './components/SingleProduct';
 import {
   BrowserRouter,
   Routes,
