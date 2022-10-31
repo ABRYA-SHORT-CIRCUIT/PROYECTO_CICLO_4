@@ -1,8 +1,8 @@
 import React from "react";
 import { ListContext } from '../context/ListContext';
-//import { Button } from '../Button/Button';
-//import { FormProductContex } from '../context/FormProductContex';
-//import { useAlert } from 'react-alert';
+import { Button } from '../Button/Button';
+import { FormProductContex } from '../context/FormProductContex';
+import { useAlert } from 'react-alert';
 import { useEffect } from "react";
 
 function FormCreateProduct() {
@@ -10,9 +10,7 @@ function FormCreateProduct() {
     //Funcion para guardar producto
     const { guardarProducto, onImageChange, imageUrls, images, setImageUrls } = React.useContext(ListContext)
 
-    //const alert = useAlert()
-
-
+    const alert = useAlert()
 
     useEffect(() => {
         if (images.length < 1) return;
