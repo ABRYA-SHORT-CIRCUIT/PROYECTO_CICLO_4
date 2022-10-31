@@ -28,16 +28,17 @@ function FormCreateProduct() {
         console.log("subir formulario");
         const nombreIngresado = event.target.nombre.value;
         const descripcionIngresada = event.target.descripcion.value;
-        const caracteristicasIngresadas = event.target.caracteristicas.value;
+        const marcaIngresada = event.target.marca.value;
         const precioIngresado = event.target.precio.value;
 
         console.log("contenedino de img" + imageUrls[0]);
         const newProduct = {
-            nombre: nombreIngresado,
-            descripcion: descripcionIngresada,
-            caracteristicas: caracteristicasIngresadas,
-            precio: precioIngresado,
-            imagen: imageUrls[0]
+        'Brand': marcaIngresada,
+        'Model': nombreIngresado,
+        'Price': precioIngresado,
+        'Description': descripcionIngresada,
+        'Image': imageUrls[0],
+        'Ratings': 0
         }
         console.log("Nuevo producto " + JSON.stringify(newProduct));
         guardarProducto(newProduct);
@@ -70,9 +71,15 @@ function FormCreateProduct() {
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="right-content">
-                                        <h4><label htmlFor="exampleInputEmail1">Nombre del producto</label></h4>
+                                        <h4><label htmlFor="exampleInputEmail1">Nombre del producto: Modelo del televisor</label></h4>
                                         <input name="nombre" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                             placeholder="Ingrese nombre del producto"></input>
+
+<div className="quote">
+                                            <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Marca</label>
+                                            <input name="marca" type="text" className="form-control" id="exampleInputPassword1"
+                                                placeholder="Ingrese la marca del producto"></input>
+                                        </div>
 
                                         <span className="price"><label>Precio</label></span>
                                         <input name="precio" type="text" className="form-control" id="exampleInputPassword1"
@@ -83,11 +90,7 @@ function FormCreateProduct() {
                                         <input name="descripcion" type="text" className="form-control"
                                             id="exampleInputPassword1"
                                             placeholder="Ingrese descripcion del producto"></input>
-                                        <div className="quote">
-                                            <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Caracteristicas</label>
-                                            <input name="caracteristicas" type="text" className="form-control" id="exampleInputPassword1"
-                                                placeholder="Ingrese caracteristicas del producto"></input>
-                                        </div>
+
 
                                         <div className="left-images">
                                             <span><label htmlFor="exampleInputPassword1">Imagen</label></span>

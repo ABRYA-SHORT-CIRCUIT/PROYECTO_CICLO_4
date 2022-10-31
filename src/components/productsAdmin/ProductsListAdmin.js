@@ -40,9 +40,9 @@ function ProductsListAdmin() {
                 <div className="container">
                     <div className="row">
                         {arrayProducts.map(televisor => (
-                            <ProductItemList key={televisor.nombre} nombre={televisor.nombre} descripcion={televisor.descripcion}
-                                caracteristicas={televisor.caracteristicas} precio={televisor.precio} imagen={televisor.imagen}
-                                id={televisor.id} />
+                            <ProductItemList key={televisor.SKU} nombre={televisor.Model} descripcion={televisor.Description}
+                                caracteristicas={televisor.Model} precio={televisor.Price} imagen={televisor.Image}
+                                id={televisor.SKU} />
                         ))
                         }
 

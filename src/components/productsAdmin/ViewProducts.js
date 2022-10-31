@@ -32,14 +32,15 @@ function ViewProduct() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="left-images">
-                                    {!arrayProductsState[id - 1].imagen && <img src="assets/images/televisor_1000.jpg" alt="TV" ></img>}
-                                    {arrayProductsState[id - 1].imagen && (<img src={URL.createObjectURL(arrayProductsState[id - 1].imagen)} alt="TV"></img>)}
+                                    {typeof(arrayProductsState[id].Image) === 'string' && <img src={arrayProductsState[id].Image} alt="TV"></img>}
+                                    {!arrayProductsState[id].Image && <img src="assets/images/televisor_1000.jpg" alt="TV" ></img>}
+                                    {arrayProductsState[id].Image && typeof(arrayProductsState[id].Image) !== 'string'&& (<img src={URL.createObjectURL(arrayProductsState[id].Image)} alt="TV"></img>)}
                                 </div>
                             </div>
                             <div className="col-lg-4">
                                 <div className="right-content">
-                                    <h4>{arrayProductsState[id - 1].nombre}</h4>
-                                    <span className="price">$ {arrayProductsState[id - 1].precio}</span>
+                                    <h4>{arrayProductsState[id].Model}</h4>
+                                    <span className="price">$ {arrayProductsState[id].Price}</span>
                                     <ul className="stars">
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
@@ -47,9 +48,9 @@ function ViewProduct() {
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
                                     </ul>
-                                    <span>{arrayProductsState[id - 1].descripcion}</span>
+                                    <span>{arrayProductsState[id].Description}</span>
                                     <div className="quote">
-                                        <i className="fa fa-quote-left"></i><p>{arrayProductsState[id - 1].caracteristicas}</p>
+                                        <i className="fa fa-quote-left"></i><p>{arrayProductsState[id].Model}</p>
                                     </div>
                                     <div className="quantity-content">
                                         <div className="left-content">

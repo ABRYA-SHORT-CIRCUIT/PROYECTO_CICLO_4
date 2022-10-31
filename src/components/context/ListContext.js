@@ -1,4 +1,5 @@
 import React from "react";
+import { PData } from "../commons/ProductData";
 
 const ListContext = React.createContext();
 
@@ -7,7 +8,7 @@ function ListProvider(props) {
 
     let arrayProducts = JSON.parse(localStorage.getItem("saveData"))
     if (!arrayProducts) {
-        localStorage.setItem("saveData", JSON.stringify([{ "id": 1, "nombre": "TvAntiguo", "descripcion": "Antiguo", "caracteristicas": "16 pulgadas", "precio": "16000000" }, { "id": 2, "nombre": "Tv-Samsung", "descripcion": "Samsumg tv", "caracteristicas": "32 pulgadas", "precio": "26000000" }, { "id": 3, "nombre": "Smart LG", "descripcion": "Smart tv", "caracteristicas": "40 pulgadas", "precio": "26580000" }, { "id": 4, "nombre": "Televisor prueba", "descripcion": "Smart tv", "caracteristicas": "40 pulgadas", "precio": "26580000" }]))
+        localStorage.setItem("saveData", JSON.stringify(PData))
         arrayProducts = JSON.parse(localStorage.getItem("saveData"));
     }
     //Estado 1
@@ -26,11 +27,13 @@ function ListProvider(props) {
         const copyarrayProducts = [...arrayProductsState]
 
         const ids = copyarrayProducts.map(object => {
-            return object.id;
+            return object.SKU;
         });
 
+        console.log("el array de id es:" + ids)
         const max = Math.max(...ids);
-        newProduct.id = max + 1;
+        console.log("el id macx: "+ max)
+        newProduct.SKU = max + 1;
         copyarrayProducts.push(newProduct)
         setArrayProductsState(copyarrayProducts)
         localStorage.setItem("saveData", JSON.stringify(copyarrayProducts))
