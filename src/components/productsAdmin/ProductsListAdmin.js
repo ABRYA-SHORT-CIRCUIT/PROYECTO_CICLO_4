@@ -1,9 +1,6 @@
 import React from 'react';
 import { ProductItemList } from './ProductItemList';
 import { ListContext } from '../context/ListContext';
-//import { Button } from '../Button/Button';
-//import { FormProductContex } from '../context/FormProductContex';
-
 
 function ProductsListAdmin() {
 
@@ -11,17 +8,9 @@ function ProductsListAdmin() {
 
     const { arrayProductsState: arrayProducts } = React.useContext(ListContext);
 
-    //Boton para abrir formulario
-    //const { setOpenFormProduct } = React.useContext(FormProductContex)
-
-    //  function openForm() {
-    //        setOpenFormProduct(true);
-    //    }
-
     return (
 
         <div className="products-main">
-
 
             <div className="page-heading" id="top">
                 <div className="container">

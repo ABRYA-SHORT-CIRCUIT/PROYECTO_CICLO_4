@@ -15,7 +15,7 @@ function Product(props) {
 
                 </div>
                 {!props.imagen && <img src="assets/images/televisor_1000.jpg" alt='TV'></img>}
-                {props.imagen && (<img src={props.imagen} alt="TV"></img>)}
+                {props.imagen && (<img src={props.imagen} height="356px" width="356px" alt="TV"></img>)}
             </div>
 
             <div className="down-content">
