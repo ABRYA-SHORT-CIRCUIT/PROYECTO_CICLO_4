@@ -9,7 +9,7 @@ function ProductItemList(props) {
             <div className="col-lg-4">
                 <Product nombre={props.nombre} precio={props.precio} imagen={props.imagen} />
                 <div className="main-border-button ColorEtiqueta">
-                    <button ><Link to={{ pathname: `/view-product-admin/${props.id}` }}>Ver detalles</Link>
+                    <button ><Link to={{ pathname: `/view-product-admin/${props.id}` }} style={{color: 'black'}}>Ver detalles</Link>
                     </button>
                 </div>
             </div>
