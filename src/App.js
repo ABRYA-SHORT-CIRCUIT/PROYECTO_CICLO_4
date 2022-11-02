@@ -26,10 +26,11 @@ function App() {
         <Header className="App-header"></Header>
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/contact-us" element={<Contact />} />
-          <Route path="/single-product" element={<SingleProduct />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path="/products-list-admin" element={<AppAdmin />} />
