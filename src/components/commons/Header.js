@@ -11,16 +11,16 @@ function Header() {
 
                             <ul className="nav">
                                 <li className="scroll-to-section"><a href="/" className="active">Inicio</a></li>
-                                <li className="scroll-to-section"><a href="#men">Samsung</a></li>
-                                <li className="scroll-to-section"><a href="#women">LG</a></li>
-                                <li className="scroll-to-section"><a href="#kids">Kalley</a></li>
-                                <li className="scroll-to-section"><a href="#kids">Otras Marcas</a></li>
+                                <li className="scroll-to-section"><a href="/#men">Samsung</a></li>
+                                <li className="scroll-to-section"><a href="/#women">LG</a></li>
+                                <li className="scroll-to-section"><a href="/#kids">Kalley</a></li>
+                                <li className="scroll-to-section"><a href="/#Others">Otras Marcas</a></li>
                                 <li className="submenu">
                                     <a href="/">Menú</a>
                                     <ul>
                                         <li><Link to={{ pathname: "/about" }}>Nosotros</Link></li>
                                         <li><Link to={{ pathname: "/products" }}>Productos</Link></li>
-                                        <li><Link to={{ pathname: "/single-product" }}>Single Product</Link></li>
+                                        {/*<li><Link to={{ pathname: "/single-product" }}>Single Product</Link></li>*/}
                                         <li><Link to={{ pathname: "/contact-us" }}>Contáctanos</Link></li>
                                     </ul>
                                 </li>
@@ -69,8 +69,8 @@ function Header() {
                                             <span className="h6">Total</span>
                                             <span className="total-price h6">$1799.00</span>
                                             <div className="text-center cart-buttons mt-3">
-                                                <a href="/" className="btn btn-small btn-transparent btn-block">View Cart</a>
-                                                <a href="/" className="btn btn-small btn-main btn-block">Checkout</a>
+                                                <a href="/cart" className="btn btn-small btn-transparent btn-block">View Cart</a>
+                                                <a href="/checkout" className="btn btn-small btn-main btn-block">Checkout</a>
                                             </div>
                                         </div>
                                     </div>

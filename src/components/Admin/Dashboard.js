@@ -241,8 +241,6 @@ function Dashboard() {
                 </div>
             </div>
 
-            <script src="assets/js/Chart.min.js"></script>
-            <script src="assets/js/dash-chart.js"></script>
 
 
         </>

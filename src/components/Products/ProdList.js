@@ -6,7 +6,7 @@ export const productList = PData.map((item) =>
             <div className="thumb">
                 <div className="hover-content">
                     <ul>
-                        <li><a href="single-product.html"><i className="fa fa-eye"></i></a></li>
+                        <li><a href={'/products/' + item.SKU}><i className="fa fa-eye"></i></a></li>
                         <li><a href="single-product.html"><i className="fa fa-star"></i></a></li>
                         <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                     </ul>
@@ -25,5 +25,5 @@ export const productList = PData.map((item) =>
                 </ul>
             </div>
         </div>
-    </div>
+    </div >
 );

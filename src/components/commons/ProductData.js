@@ -6,7 +6,8 @@ export const PData = [
         'Price': 5500000,
         'Description': 'Televisor QLED Samsung de 60cm',
         'Image': 'assets/images/samsung-00.jpg',
-        'Ratings': 4.2
+        'Ratings': 4.2,
+        'Stock': 45
     },
     {
         'SKU': '1',
@@ -15,7 +16,8 @@ export const PData = [
         'Price': 8500000,
         'Description': 'Televisor QLED Samsung de 80cm',
         'Image': 'assets/images/samsung-00.jpg',
-        'Ratings': 4.4
+        'Ratings': 4.4,
+        'Stock': 45
     },
     {
         'SKU': '2',
@@ -24,7 +26,8 @@ export const PData = [
         'Price': 1050000,
         'Description': 'Televisor QLED Samsung de 100cm',
         'Image': 'assets/images/samsung-00.jpg',
-        'Ratings': 4.7
+        'Ratings': 4.7,
+        'Stock': 45
     },
     {
         'SKU': '3',
@@ -33,7 +36,8 @@ export const PData = [
         'Price': 1850000,
         'Description': 'Televisor QLED Samsung de 140cm',
         'Image': 'assets/images/samsung-00.jpg',
-        'Ratings': 4.8
+        'Ratings': 4.8,
+        'Stock': 45
     },
     {
         'SKU': '4',
@@ -42,7 +46,8 @@ export const PData = [
         'Price': 5500000,
         'Description': 'Televisor QLED LG de 60cm',
         'Image': 'assets/images/LG-00.jpg',
-        'Ratings': 4.2
+        'Ratings': 4.2,
+        'Stock': 45
     },
     {
         'SKU': '5',
@@ -51,7 +56,8 @@ export const PData = [
         'Price': 8500000,
         'Description': 'Televisor QLED LG de 80cm',
         'Image': 'assets/images/LG-00.jpg',
-        'Ratings': 4.4
+        'Ratings': 4.4,
+        'Stock': 45
     },
     {
         'SKU': '6',
@@ -60,7 +66,8 @@ export const PData = [
         'Price': 1050000,
         'Description': 'Televisor QLED LG de 100cm',
         'Image': 'assets/images/LG-00.jpg',
-        'Ratings': 4.7
+        'Ratings': 4.7,
+        'Stock': 45
     },
     {
         'SKU': '7',
@@ -69,7 +76,8 @@ export const PData = [
         'Price': 1850000,
         'Description': 'Televisor QLED LG de 140cm',
         'Image': 'assets/images/LG-00.jpg',
-        'Ratings': 4.8
+        'Ratings': 4.8,
+        'Stock': 45
     },
     {
         'SKU': '8',
@@ -78,7 +86,8 @@ export const PData = [
         'Price': 5500000,
         'Description': 'Televisor QLED Kalley de 60cm',
         'Image': 'assets/images/kalley-00.jpg',
-        'Ratings': 4.2
+        'Ratings': 4.2,
+        'Stock': 45
     },
     {
         'SKU': '9',
@@ -87,7 +96,8 @@ export const PData = [
         'Price': 8500000,
         'Description': 'Televisor QLED Kalley de 80cm',
         'Image': 'assets/images/kalley-00.jpg',
-        'Ratings': 4.4
+        'Ratings': 4.4,
+        'Stock': 45
     },
     {
         'SKU': '10',
@@ -96,7 +106,8 @@ export const PData = [
         'Price': 1050000,
         'Description': 'Televisor QLED Kalley de 100cm',
         'Image': 'assets/images/kalley-00.jpg',
-        'Ratings': 4.7
+        'Ratings': 4.7,
+        'Stock': 45
     },
     {
         'SKU': '11',
@@ -105,7 +116,8 @@ export const PData = [
         'Price': 1850000,
         'Description': 'Televisor QLED Kalley de 140cm',
         'Image': 'assets/images/kalley-00.jpg',
-        'Ratings': 4.8
+        'Ratings': 4.8,
+        'Stock': 45
     },
     {
         'SKU': '12',
@@ -114,7 +126,8 @@ export const PData = [
         'Price': 5500000,
         'Description': 'Televisor QLED Sony de 60cm',
         'Image': 'assets/images/sony-00.jpg',
-        'Ratings': 4.2
+        'Ratings': 4.2,
+        'Stock': 45
     },
     {
         'SKU': '13',
@@ -123,7 +136,8 @@ export const PData = [
         'Price': 8500000,
         'Description': 'Televisor QLED Panasonic de 80cm',
         'Image': 'assets/images/panasonic-00.jpg',
-        'Ratings': 4.4
+        'Ratings': 4.4,
+        'Stock': 45
     },
     {
         'SKU': '14',
@@ -132,7 +146,8 @@ export const PData = [
         'Price': 1050000,
         'Description': 'Televisor QLED AOC de 100cm',
         'Image': 'assets/images/hyundai-00.jpg',
-        'Ratings': 4.7
+        'Ratings': 4.7,
+        'Stock': 45
     },
     {
         'SKU': '15',
@@ -141,6 +156,7 @@ export const PData = [
         'Price': 1850000,
         'Description': 'Televisor QLED TCL de 140cm',
         'Image': 'assets/images/TCL-00.jpg',
-        'Ratings': 4.8
+        'Ratings': 4.8,
+        'Stock': 45
     }
 ];
