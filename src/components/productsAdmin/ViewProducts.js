@@ -32,7 +32,7 @@ function ViewProduct() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="left-images">
-                                    {typeof(arrayProductsState[id].Image) === 'string' && <img src={arrayProductsState[id].Image} alt="TV"></img>}
+                                    {typeof(arrayProductsState[id].Image) === 'string' && <img src={"../"+arrayProductsState[id].Image} alt="TV"></img>}
                                     {!arrayProductsState[id].Image && <img src="assets/images/televisor_1000.jpg" alt="TV" ></img>}
                                     {arrayProductsState[id].Image && typeof(arrayProductsState[id].Image) !== 'string'&& (<img src={URL.createObjectURL(arrayProductsState[id].Image)} alt="TV"></img>)}
                                 </div>
