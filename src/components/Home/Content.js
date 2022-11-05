@@ -28,7 +28,7 @@ function Content() {
                                                     <li><a href="/single-product"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/men-01.jpg" alt="" />
+                                            <img src="assets/images/samsung-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 1</h4>
@@ -53,7 +53,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/men-02.jpg" alt="" />
+                                            <img src="assets/images/samsung-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 2</h4>
@@ -76,7 +76,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/men-03.jpg" alt="" />
+                                            <img src="assets/images/samsung-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 3</h4>
@@ -99,7 +99,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/men-01.jpg" alt="" />
+                                            <img src="assets/images/samsung-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 4</h4>
@@ -145,7 +145,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/women-01.jpg" alt="" />
+                                            <img src="assets/images/LG-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV LG Mod. 1</h4>
@@ -168,7 +168,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/women-02.jpg" alt="" />
+                                            <img src="assets/images/LG-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV LG Mod. 2</h4>
@@ -191,7 +191,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/women-03.jpg" alt="" />
+                                            <img src="assets/images/LG-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV LG Mod. 3</h4>
@@ -214,7 +214,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/women-01.jpg" alt="" />
+                                            <img src="assets/images/LG-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV LG Mod. 4</h4>
@@ -260,7 +260,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-01.jpg" alt="" />
+                                            <img src="assets/images/kalley-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 1</h4>
@@ -283,7 +283,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-02.jpg" alt="" />
+                                            <img src="assets/images/kalley-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 2</h4>
@@ -306,7 +306,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-03.jpg" alt="" />
+                                            <img src="assets/images/kalley-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 3</h4>
@@ -329,7 +329,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-01.jpg" alt="" />
+                                            <img src="assets/images/kalley-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 4</h4>
@@ -375,7 +375,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-01.jpg" alt="" />
+                                            <img src="assets/images/sony-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 1</h4>
@@ -398,7 +398,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-02.jpg" alt="" />
+                                            <img src="assets/images/panasonic-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 2</h4>
@@ -421,7 +421,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-03.jpg" alt="" />
+                                            <img src="assets/images/hyundai-00.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 3</h4>
@@ -444,7 +444,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/kid-01.jpg" alt="" />
+                                            <img src="assets/images/TCL.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Kalley Mod. 4</h4>
