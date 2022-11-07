@@ -15,7 +15,7 @@ function Banner() {
                                         <a href="/products">Encuentra tu TV!</a>
                                     </div>
                                 </div>
-                                <img src="assets/images/left-banner-image.jpg" alt="" />
+                                <img src="/assets/images/left-banner-image.jpg" alt="" />
                             </div>
                         </div>
                     </div>

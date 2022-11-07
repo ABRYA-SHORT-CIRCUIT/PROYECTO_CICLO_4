@@ -1,3 +1,5 @@
+import { shopList } from "./ShopList";
+
 function Cart() {
     return (
         <div className="checkout-container">
@@ -44,63 +46,9 @@ function Cart() {
                                         </thead>
 
                                         <tbody>
-                                            <tr className="cart_item">
-                                                <td className="product-thumbnail" data-title="Thumbnail">
-                                                    <a href="/product-single"><img src="assets/images/cart-1.jpg" className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
-                                                </td>
 
-                                                <td className="product-name" data-title="Product">
-                                                    <a href="/">Televisor Samsung QLED 140cm</a>
-                                                </td>
+                                            {shopList}
 
-                                                <td className="product-price" data-title="Price">
-                                                    <span className="amount"><span className="currencySymbol"><pre wp-pre-tag-3=""></pre>
-                                                    </span>$3.400.00</span>
-                                                </td>
-                                                <td className="product-quantity" data-title="Quantity">
-                                                    <div className="quantity">
-                                                        <label className="sr-only" >Quantity</label>
-                                                        <input type="number" value="1" id="qty" className="input-text qty text" step="1" min="0" max="9" title="Qty" size="4" />
-                                                    </div>
-                                                </td>
-                                                <td className="product-subtotal" data-title="Total">
-                                                    <span className="amount">
-                                                        <span className="currencySymbol">
-                                                            <pre wp-pre-tag-3=""></pre>
-                                                        </span>$3.400.000</span>
-                                                </td>
-                                                <td className="product-remove" data-title="Remove">
-                                                    <a href="/" className="remove" aria-label="Remove this item" data-product_id="30" data-product_sku="">×</a>
-                                                </td>
-                                            </tr>
-                                            <tr className="cart_item">
-                                                <td className="product-thumbnail" data-title="Thumbnail">
-                                                    <a href="/product-single"><img src="assets/images/cart-2.jpg" className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" /></a>
-                                                </td>
-                                                <td className="product-name" data-title="Product">
-                                                    <a href="/">Televisor LG ThinkQ 80cm</a>
-                                                </td>
-                                                <td className="product-price" data-title="Price">
-                                                    <span className="amount"><span className="currencySymbol">
-                                                        <pre wp-pre-tag-3=""></pre>
-                                                    </span>$790.000</span>
-                                                </td>
-                                                <td className="product-quantity" data-title="Quantity">
-                                                    <div className="quantity">
-                                                        <label className="sr-only" >Quantity</label>
-                                                        <input type="number" value="2" id="quantity_5cc58182489a8" className="input-text qty text" step="1" min="0" max="9" name="/" title="Qty" size="4" />
-                                                    </div>
-                                                </td>
-                                                <td className="product-subtotal" data-title="Total">
-                                                    <span className="amount">
-                                                        <span className="currencySymbol">
-                                                            <pre wp-pre-tag-3=""></pre>
-                                                        </span>$1.580.000</span>
-                                                </td>
-                                                <td className="product-remove" data-title="Remove">
-                                                    <a href="/" className="remove" aria-label="Remove this item" data-product_id="30" data-product_sku="">×</a>
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td colspan="6" className="actions">
                                                     <div className="coupon">

@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import SingleProduct from './components/SingleProduct';
 import Cart from './components/Shop/Cart';
 import Checkout from './components/Shop/Checkout';
-import Dashboard from './components/Admin/Dashboard';
+import Dashboard from './components/Admin/Dashboard/Dashboard';
 import {
   BrowserRouter,
   Routes,

@@ -26,10 +26,6 @@ function Products() {
                                 <span>Hay un modelo para cada necesidad.</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="row">
 
                         {productList}
 

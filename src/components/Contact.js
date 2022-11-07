@@ -3,7 +3,7 @@ import Newsletter from "./commons/Newsletter";
 function Contact() {
     return (
         <div className="contact-main">
-            <div className="page-heading about-page-heading" id="top">
+            <div className="page-heading contact-page-heading" id="top">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

@@ -1,4 +1,5 @@
 import { PData } from "../commons/ProductData";
+import { Link } from "react-router-dom";
 
 export const productList = PData.map((item) =>
     <div className="col-lg-4">
@@ -8,7 +9,7 @@ export const productList = PData.map((item) =>
                     <ul>
                         <li><a href={'/products/' + item.SKU}><i className="fa fa-eye"></i></a></li>
                         <li><a href="single-product.html"><i className="fa fa-star"></i></a></li>
-                        <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
+                        <li><Link to={{ pathname: "/cart" }}><i className="fa fa-shopping-cart"></i></Link></li>
                     </ul>
                 </div>
                 <img src={item.Image} alt={item.Model} />
