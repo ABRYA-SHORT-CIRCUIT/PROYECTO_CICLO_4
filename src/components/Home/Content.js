@@ -350,7 +350,7 @@ function Content() {
                 </div>
             </section>
 
-            <section className="section" id="Other">
+            <section className="section others">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
