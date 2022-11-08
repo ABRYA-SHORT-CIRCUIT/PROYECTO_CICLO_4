@@ -26,26 +26,18 @@ exports.listProducts = async (req, res, next) => {
 exports.updateStockProduct = async (req, res, next) => {
     console.log("para actualizar stock de producto");
 
-    updatedProduct = await adminProduct.updateOne({ _id: req.params.id }, {
+    await adminProduct.updateOne({ _id: req.params.id }, {
         $set: {
             stock: req.body.stock
         }
-    },
-        function (error, info) {
-            if (error) {
-                res.json({
-                    resultado: false,
-                    msg: 'No se pudo modificar el cliente',
-                    err
-                });
-            } else {
-                res.json({
-                    resultado: true,
-                    info: info
-                })
-            }
-        }
-    )
+    })
+    let updatedStock = await adminProduct.findById(req.params.id)
+
+    res.status(200).json({
+        sucess: true,
+        message: "Producto actualizado correctamente.",
+        updatedStock
+    })
 }
 
 //Modificar productos
