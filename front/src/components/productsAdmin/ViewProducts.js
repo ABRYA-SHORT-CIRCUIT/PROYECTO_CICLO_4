@@ -93,8 +93,10 @@ function ViewProduct() {
                                         </div>
                                         <div className="right-content">
                                             <div className="quantity buttons_added">
-                                                <input type="button" className="minus" />
-                                                <input type="number" step="1" min="1" max="" name="quantity" title="Qty" className="input-text qty text" size="4" pattern="" /><input type="button" className="plus" />
+                                                <input type="button" className="minus" value="-" />
+                                                <input type="number" step="1" min="1" max="" name="quantity" title="Qty" 
+                                                className="input-text qty text" size="4" pattern="" value={product.stock} readOnly="true"/>
+                                                <input type="button" className="plus" value="+"/>
                                             </div>
                                         </div>
                                     </div>

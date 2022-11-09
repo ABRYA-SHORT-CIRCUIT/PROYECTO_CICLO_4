@@ -49,38 +49,39 @@ function FormCreateProduct() {
         event.preventDefault();
 
         console.log("subir formulario");
-        const nombreIngresado = event.target.model.value;
-        const descripcionIngresada = event.target.description.value;
-        const marcaIngresada = event.target.brand.value;
-        const precioIngresado = event.target.price.value;
+        // const nombreIngresado = event.target.model.value;
+        // const descripcionIngresada = event.target.description.value;
+        // const marcaIngresada = event.target.brand.value;
+        // const precioIngresado = event.target.price.value;
 
         // console.log("contenido de img" + imageUrls[0]);
-        const newProduct = {
-            'brand': marcaIngresada,
-            'model': nombreIngresado,
-            'price': precioIngresado,
-            'description': descripcionIngresada,
-            'image': { "url": "/assets/images/LG-00.jpg" },
-            'Ratings': {}
-        }
-        console.log("Nuevo producto " + JSON.stringify(newProduct));
+        // const newProduct = {
+        //     'brand': marcaIngresada,
+        //     'model': nombreIngresado,
+        //     'price': precioIngresado,
+        //     'description': descripcionIngresada,
+        //     'image': { "url": "/assets/images/LG-00.jpg" },
+        //     'Ratings': {}
+        // }
+        console.log("Nuevo producto " + JSON.stringify(product));
         if (id) {
-            Axios.put(`http://localhost:4000/admin/updateProduct${id}`, newProduct);
+            console.log("producto actualizado" + JSON.stringify(product));
+            Axios.put(`http://localhost:4000/admin/updateProduct/${id}`, product);
             alert.success("Producto editado con exito");
         }
         else {
-            Axios.post("http://localhost:4000/admin/addProduct", newProduct);
+            Axios.post("http://localhost:4000/admin/addProduct", product);
             alert.success("Producto creado con exito");
         }
 
 
-    }   
+    }
 
     const onChange = (event) => {
-        console.log("Componente"+event.target.name);
-        console.log("Value"+event.target.value)
+        console.log("Componente" + event.target.name);
+        console.log("Value" + event.target.value)
         setProduct({ ...product, [event.target.name]: event.target.value });
-        
+
     };
 
 
@@ -114,7 +115,7 @@ function FormCreateProduct() {
                                     <div className="right-content">
                                         <h4><label htmlFor="exampleInputEmail1">Nombre del producto: Modelo del televisor</label></h4>
                                         <input name="model" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                            placeholder="Ingrese nombre del producto"  onChange={onChange}  value={product.model}></input>
+                                            placeholder="Ingrese nombre del producto" onChange={onChange} value={product.model}></input>
 
                                         <div className="quote">
                                             <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Marca</label>
@@ -132,10 +133,19 @@ function FormCreateProduct() {
                                             id="exampleInputPassword1"
                                             placeholder="Ingrese descripcion del producto" onChange={onChange} value={product.description}></input>
 
-                                        <span><label htmlFor="exampleInputPassword1">Stock</label></span>
-                                        <input name="stock" type="text" className="form-control"
-                                            id="exampleInputPassword1"
-                                            placeholder="Ingrese el stock disponible del producto" onChange={onChange} value={product.stock}></input>
+                                        <div className="quantity-content">
+                                            <div className="left-content">
+                                                <h6>No. of Stock</h6>
+                                            </div>
+                                            <div className="right-content">
+                                                <div className="quantity buttons_added">
+                                                    <input type="button" className="minus" value="-" />
+                                                    <input type="number" step="1" min="1" max="" name="stock" title="Qty"
+                                                        className="input-text qty text" size="4" pattern="" value={product.stock} onChange={onChange} />
+                                                    <input type="button" className="plus" value="+" />
+                                                </div>
+                                            </div>
+                                        </div>
 
 
                                         <div className="left-images">
