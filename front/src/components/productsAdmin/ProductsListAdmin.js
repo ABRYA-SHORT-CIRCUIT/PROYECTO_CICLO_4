@@ -23,6 +23,12 @@ function ProductsListAdmin() {
         }, []
     )
 
+    let tv = [...arrayProducts];
+    let withoutStock = tv.filter(televisor => (televisor.stock<1));
+    let withStock = tv.filter(televisor => (televisor.stock>0));
+
+        
+
     return (
 
         <div className="products-main">
@@ -54,7 +60,17 @@ function ProductsListAdmin() {
 
                 <div className="container">
                     <div className="row">
-                        {arrayProducts.map(televisor => (
+                        <h1>Productos con stock</h1>
+                        {withStock.map(televisor => (
+                            <ProductItemList key={televisor._id} nombre={televisor.brand} caracteristicas={televisor.model}
+                                descripcion={televisor.description} precio={televisor.price} imagen={televisor.image}
+                                id={televisor._id} />
+                        ))
+                        }
+                </div>
+                    <div className="row">
+                    <h1>Productos sin stock</h1>
+                        {withoutStock.map(televisor => (
                             <ProductItemList key={televisor._id} nombre={televisor.brand} caracteristicas={televisor.model}
                                 descripcion={televisor.description} precio={televisor.price} imagen={televisor.image}
                                 id={televisor._id} />
