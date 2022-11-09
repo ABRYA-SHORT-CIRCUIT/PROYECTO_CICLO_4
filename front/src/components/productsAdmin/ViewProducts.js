@@ -65,6 +65,7 @@ function ViewProduct() {
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="left-images">
+                                    {product.image && (<img src={product.image.url}></img>)}
                                     {/* <h1>{product.image.url}</h1> */}
                                     {/* <img src={"../"+product.image.url} alt="TV"></img> */}
                                     {/* {typeof(product.image) === 'string' && <img src={"../"+product.image} alt="TV"></img>}
@@ -86,7 +87,7 @@ function ViewProduct() {
                                     </ul>
 
                                     <span>Caracteristicas: {product.description}</span>
-                                    
+
                                     <div className="quantity-content">
                                         <div className="left-content">
                                             <h6>No. of Stock</h6>
@@ -94,9 +95,9 @@ function ViewProduct() {
                                         <div className="right-content">
                                             <div className="quantity buttons_added">
                                                 <input type="button" className="minus" value="-" />
-                                                <input type="number" step="1" min="1" max="" name="quantity" title="Qty" 
-                                                className="input-text qty text" size="4" pattern="" value={product.stock} readOnly="true"/>
-                                                <input type="button" className="plus" value="+"/>
+                                                <input type="number" step="1" min="1" max="" name="quantity" title="Qty"
+                                                    className="input-text qty text" size="4" pattern="" value={product.stock} readOnly="true" />
+                                                <input type="button" className="plus" value="+" />
                                             </div>
                                         </div>
                                     </div>

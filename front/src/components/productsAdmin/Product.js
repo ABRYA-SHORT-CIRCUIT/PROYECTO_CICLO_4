@@ -14,6 +14,7 @@ function Product(props) {
                     </ul>
 
                 </div>
+                {props.imagen && (<img src={props.imagen.url}></img>)}
                 {/* {!props.imagen && <img src="assets/images/televisor_1000.jpg" alt='TV'></img>}
                 {props.imagen && (<img src={props.imagen.url} height="356px" width="356px" alt="TV"></img>)} */}
             </div>
