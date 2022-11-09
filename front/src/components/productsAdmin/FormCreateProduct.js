@@ -109,7 +109,7 @@ function FormCreateProduct() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-4">
-                                    <img src="/assets/images/televisor-muestra.png" alt="Imagen de referencia"></img>
+                                   {product.image && (<img src={product.image.url} alt="Imagen de referencia"></img>)} 
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="right-content">
