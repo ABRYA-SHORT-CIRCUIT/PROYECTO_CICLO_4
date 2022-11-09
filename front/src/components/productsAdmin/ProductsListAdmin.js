@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { ProductItemList } from './ProductItemList';
 import { ListContext } from '../context/ListContext';
+import Axios from "axios";
 
 function ProductsListAdmin() {
 
     //Listar productos
 
-    const { arrayProductsState: arrayProducts } = React.useContext(ListContext);
+    const { arrayProductsState: arrayProducts, setArrayProductsState } = React.useContext(ListContext);
+
+    useEffect(
+        () => {
+            const toListProducts = async () => {
+                const { data } = await Axios.get(
+                    "http://localhost:4000/admin/listProduct"
+                );
+                
+                console.log("buscado productos" + data.listProducts);
+                setArrayProductsState(data.listProducts);
+            };
+            toListProducts();
+            
+        }
+    )
 
     return (
 

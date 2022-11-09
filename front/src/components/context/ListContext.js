@@ -5,12 +5,14 @@ const ListContext = React.createContext();
 
 function ListProvider(props) {
 
+    
 
     let arrayProducts = JSON.parse(localStorage.getItem("saveData"))
     if (!arrayProducts) {
         localStorage.setItem("saveData", JSON.stringify(PData))
         arrayProducts = JSON.parse(localStorage.getItem("saveData"));
     }
+
     //Estado 1
     const [arrayProductsState, setArrayProductsState] = React.useState(arrayProducts);
     //Imagen

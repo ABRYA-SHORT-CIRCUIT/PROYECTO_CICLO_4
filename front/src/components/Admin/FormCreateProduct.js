@@ -4,6 +4,7 @@ import { Button } from '../Button/Button';
 import { FormProductContex } from '../context/FormProductContex';
 import { useAlert } from 'react-alert';
 import { useEffect } from "react";
+import Axios from "axios";
 
 function FormCreateProduct() {
 
@@ -13,6 +14,7 @@ function FormCreateProduct() {
     const alert = useAlert()
 
     useEffect(() => {
+        console.log("segundo use effect")
         if (images.length < 1) return;
 
         const newImagesUrl = [];
@@ -33,17 +35,18 @@ function FormCreateProduct() {
 
         console.log("contenedino de img" + imageUrls[0]);
         const newProduct = {
-        'Brand': marcaIngresada,
-        'Model': nombreIngresado,
-        'Price': precioIngresado,
-        'Description': descripcionIngresada,
-        'Image': imageUrls[0],
-        'Ratings': 0
+            'Brand': marcaIngresada,
+            'Model': nombreIngresado,
+            'Price': precioIngresado,
+            'Description': descripcionIngresada,
+            'Image': imageUrls[0],
+            'Ratings': 0
         }
         console.log("Nuevo producto " + JSON.stringify(newProduct));
         guardarProducto(newProduct);
         alert.success("Producto creado con exito");
     }
+
 
     return (
         <React.Fragment>
@@ -75,7 +78,7 @@ function FormCreateProduct() {
                                         <input name="nombre" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                             placeholder="Ingrese nombre del producto"></input>
 
-<div className="quote">
+                                        <div className="quote">
                                             <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Marca</label>
                                             <input name="marca" type="text" className="form-control" id="exampleInputPassword1"
                                                 placeholder="Ingrese la marca del producto"></input>
