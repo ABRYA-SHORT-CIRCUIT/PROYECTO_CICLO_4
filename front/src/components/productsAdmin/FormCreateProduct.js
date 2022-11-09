@@ -37,9 +37,9 @@ function FormCreateProduct() {
 
     useEffect(() => {
         console.log("Buscando producto")
-        if(id){
+        if (id) {
             toViewProduct(id);
-        } else{
+        } else {
             console.log("no hay id")
             setProduct({});
         }
@@ -47,12 +47,12 @@ function FormCreateProduct() {
 
     const subirFormulario = (event) => {
         event.preventDefault();
-        
+
         console.log("subir formulario");
-        const nombreIngresado = event.target.nombre.value;
-        const descripcionIngresada = event.target.descripcion.value;
-        const marcaIngresada = event.target.marca.value;
-        const precioIngresado = event.target.precio.value;
+        const nombreIngresado = event.target.model.value;
+        const descripcionIngresada = event.target.description.value;
+        const marcaIngresada = event.target.brand.value;
+        const precioIngresado = event.target.price.value;
 
         // console.log("contenido de img" + imageUrls[0]);
         const newProduct = {
@@ -64,19 +64,26 @@ function FormCreateProduct() {
             'Ratings': {}
         }
         console.log("Nuevo producto " + JSON.stringify(newProduct));
-        if(id){
+        if (id) {
             Axios.put(`http://localhost:4000/admin/updateProduct${id}`, newProduct);
             alert.success("Producto editado con exito");
         }
-        else{
-        Axios.post("http://localhost:4000/admin/addProduct", newProduct);
-        alert.success("Producto creado con exito");
-    }
+        else {
+            Axios.post("http://localhost:4000/admin/addProduct", newProduct);
+            alert.success("Producto creado con exito");
+        }
 
+
+    }   
+
+    const onChange = (event) => {
+        console.log("Componente"+event.target.name);
+        console.log("Value"+event.target.value)
+        setProduct({ ...product, [event.target.name]: event.target.value });
         
-    }
+    };
 
-    
+
 
 
     return (
@@ -95,7 +102,7 @@ function FormCreateProduct() {
                         </div>
                     </div>
                 </div>
-                <form onSubmit={subirFormulario}>
+                <form onSubmit={subirFormulario} >
 
                     <section className="section" id="product">
                         <div className="container">
@@ -106,29 +113,29 @@ function FormCreateProduct() {
                                 <div className="col-lg-8">
                                     <div className="right-content">
                                         <h4><label htmlFor="exampleInputEmail1">Nombre del producto: Modelo del televisor</label></h4>
-                                        <input name="nombre" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                            placeholder="Ingrese nombre del producto" value={product.model}></input>
+                                        <input name="model" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                            placeholder="Ingrese nombre del producto"  onChange={onChange}  value={product.model}></input>
 
                                         <div className="quote">
                                             <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Marca</label>
-                                            <input name="marca" type="text" className="form-control" id="exampleInputPassword1"
-                                                placeholder="Ingrese la marca del producto" value={product.brand}></input>
+                                            <input name="brand" type="text" className="form-control" id="exampleInputPassword1"
+                                                placeholder="Ingrese la marca del producto" onChange={onChange} value={product.brand}></input>
                                         </div>
 
                                         <span className="price"><label>Precio</label></span>
-                                        <input name="precio" type="text" className="form-control" id="exampleInputPassword1"
-                                            placeholder="Ingrese el precio del producto" value={product.price} ></input>
+                                        <input name="price" type="text" className="form-control" id="exampleInputPassword1"
+                                            placeholder="Ingrese el precio del producto" onChange={onChange} value={product.price} ></input>
 
 
                                         <span><label htmlFor="exampleInputPassword1">Descripcion</label></span>
-                                        <input name="descripcion" type="text" className="form-control"
+                                        <input name="description" type="text" className="form-control"
                                             id="exampleInputPassword1"
-                                            placeholder="Ingrese descripcion del producto" value={product.description}></input>
+                                            placeholder="Ingrese descripcion del producto" onChange={onChange} value={product.description}></input>
 
                                         <span><label htmlFor="exampleInputPassword1">Stock</label></span>
-                                        <input name="descripcion" type="text" className="form-control"
+                                        <input name="stock" type="text" className="form-control"
                                             id="exampleInputPassword1"
-                                            placeholder="Ingrese el stock disponible del producto" value={product.stock}></input>
+                                            placeholder="Ingrese el stock disponible del producto" onChange={onChange} value={product.stock}></input>
 
 
                                         <div className="left-images">
@@ -151,9 +158,9 @@ function FormCreateProduct() {
                     <br></br>
 
                     {!id && <div className="main-border-button"><button type="submit">Guardar Producto</button></div>}
-                    
+
                     {id && <div className="main-border-button"><button type="submit">Editar Producto</button></div>}
-                    
+
 
                 </form>
 
