@@ -76,6 +76,7 @@ function ViewProduct() {
                                 <div className="right-content">
                                     <h4>{product.model}</h4>
                                     <span className="price">$ {product.price}</span>
+
                                     <ul className="stars">
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
@@ -83,17 +84,17 @@ function ViewProduct() {
                                         <li><i className="fa fa-star"></i></li>
                                         <li><i className="fa fa-star"></i></li>
                                     </ul>
-                                    <span>{product.description}</span>
-                                    <div className="quote">
-                                        <i className="fa fa-quote-left"></i><p>{product.model}</p>
-                                    </div>
+
+                                    <span>Caracteristicas: {product.description}</span>
+                                    
                                     <div className="quantity-content">
                                         <div className="left-content">
                                             <h6>No. of Stock</h6>
                                         </div>
                                         <div className="right-content">
                                             <div className="quantity buttons_added">
-                                                <input type="button" className="minus" /><input type="number" step="1" min="1" max="" name="quantity" title="Qty" className="input-text qty text" size="4" pattern="" /><input type="button" className="plus" />
+                                                <input type="button" className="minus" />
+                                                <input type="number" step="1" min="1" max="" name="quantity" title="Qty" className="input-text qty text" size="4" pattern="" /><input type="button" className="plus" />
                                             </div>
                                         </div>
                                     </div>

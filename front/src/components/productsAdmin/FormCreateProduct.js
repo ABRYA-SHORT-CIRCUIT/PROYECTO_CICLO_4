@@ -15,7 +15,7 @@ function FormCreateProduct() {
     const [product, setProduct] = React.useState({})
 
     useEffect(() => {
-        console.log("segundo use effect")
+        console.log(" use effect IMAGEN")
         if (images.length < 1) return;
 
         const newImagesUrl = [];
@@ -101,7 +101,7 @@ function FormCreateProduct() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-4">
-                                    <img src="" alt="Imagen de referencia"></img>
+                                    <img src="/assets/images/televisor-muestra.png" alt="Imagen de referencia"></img>
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="right-content">
