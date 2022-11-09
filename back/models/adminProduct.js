@@ -24,18 +24,13 @@ const productosSchema = mongoose.Schema({
         type: String,
         required: [true, "Por favor registre una descripcion para el televisor."]
     },
-    image: [
+    image: 
         {
-            public_id: {
-                type: String,
-                required: true
-            },
             url: {
                 type: String,
                 required: true
             }
-        }
-    ],
+        },
     stock: {
         type: Number,
         required: [true, "Por favor registre el stock del televisor"],

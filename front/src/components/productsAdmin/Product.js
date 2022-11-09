@@ -14,13 +14,14 @@ function Product(props) {
                     </ul>
 
                 </div>
-                {!props.imagen && <img src="assets/images/televisor_1000.jpg" alt='TV'></img>}
-                {props.imagen && (<img src={props.imagen} height="356px" width="356px" alt="TV"></img>)}
+                {/* {!props.imagen && <img src="assets/images/televisor_1000.jpg" alt='TV'></img>}
+                {props.imagen && (<img src={props.imagen.url} height="356px" width="356px" alt="TV"></img>)} */}
             </div>
 
             <div className="down-content">
                 <h4>{props.nombre}</h4>
-                <span>$ {props.precio}</span>
+                <span>{props.caracteristicas}</span>
+                <span>${props.precio}</span>
                 <ul className="stars">
                     <li><i className="fa fa-star"></i></li>
                     <li><i className="fa fa-star"></i></li>

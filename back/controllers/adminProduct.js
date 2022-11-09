@@ -65,3 +65,15 @@ exports.deleteProduct = async (req, res, next) => {
         message: "Producto eliminado correctamente"
     })
 }
+
+//Buscar producto por id
+exports.findProduct = async (req, res, next) => {
+
+    const product = await adminProduct.findById(req.params.id)
+
+    res.status(200).json({
+        sucess: true,
+        message: "Producto encontrado.",
+        product
+    })
+}

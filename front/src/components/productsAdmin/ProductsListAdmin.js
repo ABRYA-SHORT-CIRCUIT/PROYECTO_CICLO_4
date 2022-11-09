@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { ProductItemList } from './ProductItemList';
 import { ListContext } from '../context/ListContext';
 import Axios from "axios";
@@ -15,13 +15,12 @@ function ProductsListAdmin() {
                 const { data } = await Axios.get(
                     "http://localhost:4000/admin/listProduct"
                 );
-                
-                console.log("buscado productos" + data.listProducts);
+
+                console.log("buscado productos" + JSON.stringify(data.listProducts));
                 setArrayProductsState(data.listProducts);
             };
             toListProducts();
-            
-        }
+        }, []
     )
 
     return (
@@ -56,9 +55,9 @@ function ProductsListAdmin() {
                 <div className="container">
                     <div className="row">
                         {arrayProducts.map(televisor => (
-                            <ProductItemList key={televisor.SKU} nombre={televisor.Model} descripcion={televisor.Description}
-                                caracteristicas={televisor.Model} precio={televisor.Price} imagen={televisor.Image}
-                                id={televisor.SKU} />
+                            <ProductItemList key={televisor._id} nombre={televisor.brand} caracteristicas={televisor.model}
+                                descripcion={televisor.description} precio={televisor.price} imagen={televisor.image}
+                                id={televisor._id} />
                         ))
                         }
 

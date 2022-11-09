@@ -2,7 +2,12 @@
 const express=require("express")
 const router=express.Router();
 
-const {addProduct, listProducts, updateProduct, deleteProduct, updateStockProduct} = require("../controllers/adminProduct");
+const {addProduct,
+    listProducts, 
+    updateProduct, 
+    deleteProduct, 
+    updateStockProduct, 
+    findProduct} = require("../controllers/adminProduct");
 
 
 //agregar producto
@@ -15,5 +20,7 @@ router.route('/updateProduct/:id').put(updateProduct);
 router.route('/deleteProduct/:id').delete(deleteProduct);
 //ACtualizar stock
 router.route('/updateStockProduct/:id').put(updateStockProduct);
+//Buscar producto
+router.route('/findProduct/:id').get(findProduct);
 
 module.exports=router;

@@ -41,6 +41,8 @@ function ListProvider(props) {
         localStorage.setItem("saveData", JSON.stringify(copyarrayProducts))
     }
 
+    
+
     const [viewProductsState, setViewProductsState] = React.useState({});
 
     return (
