@@ -1,4 +1,4 @@
-import dummy from './404.webp';
+import dummy from './404.jpg';
 import './404.css';
 
 function NotFound() {

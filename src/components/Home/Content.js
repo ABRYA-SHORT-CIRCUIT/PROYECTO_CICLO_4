@@ -53,7 +53,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/samsung-00.jpg" alt="" />
+                                            <img src="assets/images/samsung-01.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 2</h4>
@@ -76,7 +76,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/samsung-00.jpg" alt="" />
+                                            <img src="assets/images/samsung-02.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 3</h4>
@@ -99,7 +99,7 @@ function Content() {
                                                     <li><a href="single-product.html"><i className="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <img src="assets/images/samsung-00.jpg" alt="" />
+                                            <img src="assets/images/samsung-03.jpg" alt="" />
                                         </div>
                                         <div className="down-content">
                                             <h4>TV Samsung Mod. 4</h4>
