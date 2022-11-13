@@ -63,14 +63,18 @@ function FormCreateProduct() {
         //     'image': { "url": "/assets/images/LG-00.jpg" },
         //     'Ratings': {}
         // }
-        console.log("Nuevo producto " + JSON.stringify(product));
+        let productofinal={...product,"image":{
+            "url":imageUrls[0]
+        }}
+
+        console.log("Nuevo producto " + JSON.stringify(productofinal));
         if (id) {
-            console.log("producto actualizado" + JSON.stringify(product));
-            Axios.put(`http://localhost:4000/admin/updateProduct/${id}`, product);
+            console.log("producto actualizado" + JSON.stringify(productofinal));
+            Axios.put(`http://localhost:4000/admin/updateProduct/${id}`, productofinal);
             alert.success("Producto editado con exito");
         }
         else {
-            Axios.post("http://localhost:4000/admin/addProduct", product);
+            Axios.post("http://localhost:4000/admin/addProduct", productofinal);
             alert.success("Producto creado con exito");
         }
 
