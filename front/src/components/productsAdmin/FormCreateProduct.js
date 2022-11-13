@@ -29,7 +29,7 @@ function FormCreateProduct() {
     //Metodo para encontrar el producto a editar
     const toViewProduct = async (id) => {
         const { data } = await Axios.get(
-            `http://localhost:4000/admin/findProduct/${id}`
+            `http://localhost:4000/findProduct/${id}`
         );
         console.log("Producto encontrado" + JSON.stringify(data.product));
         setProduct(data.product);
@@ -67,11 +67,11 @@ function FormCreateProduct() {
         console.log("Nuevo producto " + JSON.stringify(productofinal));
         if (id) {
             console.log("producto actualizado" + JSON.stringify(productofinal));
-            Axios.put(`http://localhost:4000/admin/updateProduct/${id}`, productofinal);
+            Axios.put(`http://localhost:4000/updateProduct/${id}`, productofinal);
             alert.success("Producto editado con exito");
         }
         else {
-            Axios.post("http://localhost:4000/admin/addProduct", productofinal);
+            Axios.post("http://localhost:4000/addProduct", productofinal);
             alert.success("Producto creado con exito");
         }
 

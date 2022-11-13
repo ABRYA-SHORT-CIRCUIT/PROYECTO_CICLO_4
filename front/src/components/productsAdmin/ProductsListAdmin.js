@@ -13,7 +13,7 @@ function ProductsListAdmin() {
         () => {
             const toListProducts = async () => {
                 const { data } = await Axios.get(
-                    "http://localhost:4000/admin/listProduct"
+                    "http://localhost:4000/listProduct"
                 );
 
                 console.log("buscado productos" + JSON.stringify(data.listProducts));
