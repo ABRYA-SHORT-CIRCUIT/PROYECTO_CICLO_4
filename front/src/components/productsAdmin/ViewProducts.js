@@ -17,7 +17,7 @@ function ViewProduct() {
         () => {
             const toViewProduct = async (id) => {
                 const { data } = await Axios.get(
-                    `http://localhost:4000/admin/findProduct/${id}`
+                    `http://localhost:4000/findProduct/${id}`
                 );
 
                 console.log("Producto encontrado" + JSON.stringify(data.product));
@@ -29,7 +29,7 @@ function ViewProduct() {
 
     const toDeleteProduct = async (id) => {
         const { data } = await Axios.delete(
-            `http://localhost:4000/admin/deleteProduct/${id}`
+            `http://localhost:4000/deleteProduct/${id}`
         );
         console.log("Producto eliminado" + JSON.stringify(data));
     };

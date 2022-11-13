@@ -29,7 +29,7 @@ function FormCreateProduct() {
     //Metodo para encontrar el producto a editar
     const toViewProduct = async (id) => {
         const { data } = await Axios.get(
-            `http://localhost:4000/admin/findProduct/${id}`
+            `http://localhost:4000/findProduct/${id}`
         );
         console.log("Producto encontrado" + JSON.stringify(data.product));
         setProduct(data.product);
@@ -49,32 +49,29 @@ function FormCreateProduct() {
         event.preventDefault();
 
         console.log("subir formulario");
-        // const nombreIngresado = event.target.model.value;
-        // const descripcionIngresada = event.target.description.value;
-        // const marcaIngresada = event.target.brand.value;
-        // const precioIngresado = event.target.price.value;
+        let productofinal;
+        if (imageUrls[0]) {
+            productofinal = {
+                ...product, "image": {
+                    "url": imageUrls[0]
+                }
+            }
 
-        // console.log("contenido de img" + imageUrls[0]);
-        // const newProduct = {
-        //     'brand': marcaIngresada,
-        //     'model': nombreIngresado,
-        //     'price': precioIngresado,
-        //     'description': descripcionIngresada,
-        //     'image': { "url": "/assets/images/LG-00.jpg" },
-        //     'Ratings': {}
-        // }
-        let productofinal={...product,"image":{
-            "url":imageUrls[0]
-        }}
+        } else {
+            productofinal = { ...product }
+        }
+
+
+
 
         console.log("Nuevo producto " + JSON.stringify(productofinal));
         if (id) {
             console.log("producto actualizado" + JSON.stringify(productofinal));
-            Axios.put(`http://localhost:4000/admin/updateProduct/${id}`, productofinal);
+            Axios.put(`http://localhost:4000/updateProduct/${id}`, productofinal);
             alert.success("Producto editado con exito");
         }
         else {
-            Axios.post("http://localhost:4000/admin/addProduct", productofinal);
+            Axios.post("http://localhost:4000/addProduct", productofinal);
             alert.success("Producto creado con exito");
         }
 
@@ -113,27 +110,27 @@ function FormCreateProduct() {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-4">
-                                   {product.image && (<img src={product.image.url} alt="Imagen de referencia"></img>)} 
+                                    {product.image && (<img src={product.image.url} alt="Imagen de referencia"></img>)}
                                 </div>
                                 <div className="col-lg-8">
                                     <div className="right-content">
                                         <h4><label htmlFor="exampleInputEmail1">Nombre del producto: Modelo del televisor</label></h4>
-                                        <input name="model" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        <input required="true" name="model" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                             placeholder="Ingrese nombre del producto" onChange={onChange} value={product.model}></input>
 
                                         <div className="quote">
                                             <i className="fa fa-quote-left"></i><label htmlFor="exampleInputPassword1">Marca</label>
-                                            <input name="brand" type="text" className="form-control" id="exampleInputPassword1"
+                                            <input required="true" name="brand" type="text" className="form-control" id="exampleInputPassword1"
                                                 placeholder="Ingrese la marca del producto" onChange={onChange} value={product.brand}></input>
                                         </div>
 
                                         <span className="price"><label>Precio</label></span>
-                                        <input name="price" type="text" className="form-control" id="exampleInputPassword1"
+                                        <input required="true" name="price" type="text" className="form-control" id="exampleInputPassword1"
                                             placeholder="Ingrese el precio del producto" onChange={onChange} value={product.price} ></input>
 
 
                                         <span><label htmlFor="exampleInputPassword1">Descripcion</label></span>
-                                        <input name="description" type="text" className="form-control"
+                                        <input required="true" name="description" type="text" className="form-control"
                                             id="exampleInputPassword1"
                                             placeholder="Ingrese descripcion del producto" onChange={onChange} value={product.description}></input>
 
@@ -144,7 +141,7 @@ function FormCreateProduct() {
                                             <div className="right-content">
                                                 <div className="quantity buttons_added">
                                                     <input type="button" className="minus" value="-" />
-                                                    <input type="number" step="1" min="1" max="" name="stock" title="Qty"
+                                                    <input required="true" type="number" step="1" min="1" max="" name="stock" title="Qty"
                                                         className="input-text qty text" size="4" pattern="" value={product.stock} onChange={onChange} />
                                                     <input type="button" className="plus" value="+" />
                                                 </div>
@@ -154,10 +151,16 @@ function FormCreateProduct() {
 
                                         <div className="left-images">
                                             <span><label htmlFor="exampleInputPassword1">Imagen</label></span>
-                                            <input name="imagenProducto" accept="imagen/png, imagen/jpeg"
+                                            {product.image && (<input  name="imagenProducto" accept="imagen/png, imagen/jpeg"
                                                 onChange={onImageChange}
                                                 type="file" className="form-control" id="exampleInputPassword1"
-                                                placeholder="Ingrese imagen del producto"></input>
+                                                placeholder="Ingrese imagen del producto"></input>)}
+                                            {!product.image && (<input required="true" name="imagenProducto" accept="imagen/png, imagen/jpeg"
+                                                onChange={onImageChange}
+                                                type="file" className="form-control" id="exampleInputPassword1"
+                                                placeholder="Ingrese imagen del producto"></input>)}
+                                            
+
                                             <div className="left-images">
                                                 {imageUrls.map(imageSrc => <h1>Foto<img src={imageSrc} alt="IMTV" /></h1>)}
 
