@@ -35,6 +35,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
           <Route path="/products-list-admin" element={<AppAdmin />} />
           <Route path="/create-product" element={<CreateProduct />} />
+          <Route path="/update-product/:id" element={<CreateProduct />} />
           <Route path="/view-product-admin/:id" element={<ViewProductAdmin />} />
           <Route path='/ventas' element={<Dashboard />} />
         </Routes>

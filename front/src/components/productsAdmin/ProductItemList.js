@@ -7,7 +7,7 @@ function ProductItemList(props) {
         <React.Fragment>
 
             <div className="col-lg-4">
-                <Product nombre={props.nombre} precio={props.precio} imagen={props.imagen} />
+                <Product nombre={props.nombre} caracteristicas={props.caracteristicas} precio={props.precio} imagen={props.imagen} />
                 <div className="main-border-button ColorEtiqueta">
                     <button ><Link to={{ pathname: `/view-product-admin/${props.id}` }} style={{color: 'black'}}>Ver detalles</Link>
                     </button>
