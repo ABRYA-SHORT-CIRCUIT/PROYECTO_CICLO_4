@@ -41,7 +41,7 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-01.jpg" alt="Banner" />
+                                            <img src="assets/images/samsung-products.jpg" alt="Banner" />
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-02.jpg" alt="Banner" />
+                                            <img src="assets/images/LG-products.jpg" alt="Banner" />
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-03.jpg" alt="Banner" />
+                                            <img src="assets/images/kalley-products.jpg" alt="Banner" />
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@ function Banner() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-04.jpg" alt="Banner" />
+                                            <img src="assets/images/other-brands-products.jpg" alt="Banner" />
                                         </div>
                                     </div>
                                 </div>

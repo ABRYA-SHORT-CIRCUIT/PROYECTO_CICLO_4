@@ -16,8 +16,8 @@ export const PData = [
         'Model': 'Samsung QLED Mod. 2 80cm',
         'Price': 8500000,
         'Description': 'Televisor QLED Samsung de 80cm',
-        'Image': '/assets/images/samsung-00.jpg',
-        'Thumbnail': '/assets/images/samsung-00tn.jpg',
+        'Image': '/assets/images/samsung-01.jpg',
+        'Thumbnail': '/assets/images/samsung-01tn.jpg',
         'Ratings': 4.4,
         'Stock': 45
     },
@@ -27,8 +27,8 @@ export const PData = [
         'Model': 'Samsung QLED Mod. 3 100cm',
         'Price': 1050000,
         'Description': 'Televisor QLED Samsung de 100cm',
-        'Image': '/assets/images/samsung-00.jpg',
-        'Thumbnail': '/assets/images/samsung-00tn.jpg',
+        'Image': '/assets/images/samsung-02.jpg',
+        'Thumbnail': '/assets/images/samsung-02tn.jpg',
         'Ratings': 4.7,
         'Stock': 45
     },
@@ -38,8 +38,8 @@ export const PData = [
         'Model': 'Samsung QLED Mod. 4 140cm',
         'Price': 1850000,
         'Description': 'Televisor QLED Samsung de 140cm',
-        'Image': '/assets/images/samsung-00.jpg',
-        'Thumbnail': '/assets/images/samsung-00tn.jpg',
+        'Image': '/assets/images/samsung-03.jpg',
+        'Thumbnail': '/assets/images/samsung-03tn.jpg',
         'Ratings': 4.8,
         'Stock': 45
     },

@@ -7,7 +7,7 @@ function Header() {
                 <div className="row">
                     <div className="col-12">
                         <nav className="main-nav">
-                            <Link className="logo" to={{ pathname: "/" }}>ABRYA TVShop</Link>
+                            <Link className="logo" to={{ pathname: "/" }}><i className="fa fa-desktop"></i>   ABRYA TVShop</Link>
 
                             <ul className="nav">
                                 <li className="scroll-to-section"><a href="/" className="active">Inicio</a></li>
@@ -20,8 +20,7 @@ function Header() {
                                     <ul>
                                         <li><Link to={{ pathname: "/about" }}>Nosotros</Link></li>
                                         <li><Link to={{ pathname: "/products" }}>Productos</Link></li>
-                                        {/*<li><Link to={{ pathname: "/single-product" }}>Single Product</Link></li>*/}
-                                        <li><Link to={{ pathname: "/contact-us" }}>Contáctanos</Link></li>
+                                        <li><Link to={{ pathname: "/contact" }}>Contáctanos</Link></li>
                                     </ul>
                                 </li>
                                 <li className="submenu">
@@ -139,8 +138,6 @@ function Header() {
                 </div>
             </div>
         </header>
-
-
     );
 }
 export default Header;

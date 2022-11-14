@@ -10,6 +10,8 @@ import SingleProduct from './components/SingleProduct';
 import Cart from './components/Shop/Cart';
 import Checkout from './components/Shop/Checkout';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
+import NotFound from './components/commons/404';
+
 import {
   BrowserRouter,
   Routes,
@@ -30,7 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<SingleProduct />} />
-          <Route path="/contact-us" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path="/products-list-admin" element={<AppAdmin />} />
@@ -38,6 +40,7 @@ function App() {
           <Route path="/update-product/:id" element={<CreateProduct />} />
           <Route path="/view-product-admin/:id" element={<ViewProductAdmin />} />
           <Route path='/ventas' element={<Dashboard />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

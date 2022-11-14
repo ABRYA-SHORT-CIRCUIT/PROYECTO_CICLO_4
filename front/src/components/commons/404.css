@@ -1,0 +1,67 @@
+.NF {
+    text-align: center;
+}
+
+.NF-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .NF-logo {
+        animation: NF-logo-spin infinite 20s linear;
+    }
+}
+
+.NF-header {
+    background-color: #3c4959;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin) !important;
+    color: white !important;
+}
+
+p.Not-Found {
+    margin-top: 150px !important;
+}
+
+code {
+    font-size: calc(10px + 2vmin) !important;
+    color: white !important;
+}
+
+.NF-link {
+    color: #61dafb;
+    text-decoration: underline !important;
+}
+
+.NF-link:hover {
+    color: #bebfc1;
+}
+
+@keyframes NF-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
