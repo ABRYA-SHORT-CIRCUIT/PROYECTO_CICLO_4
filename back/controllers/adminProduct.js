@@ -6,6 +6,7 @@ const adminProduct = require("../models/adminProduct");
 exports.addProduct = async (req, res, next) => {
     console.log("creacion de producto")
     const newProduct = await adminProduct.create(req.body);
+
     res.status(201).json({
         success: true,
         newProduct

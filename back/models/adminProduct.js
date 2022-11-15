@@ -24,13 +24,12 @@ const productosSchema = mongoose.Schema({
         type: String,
         required: [true, "Por favor registre una descripcion para el televisor."]
     },
-    image: 
-        {
-            url: {
-                type: String,
-                required: true
-            }
-        },
+    image: {
+        url: {
+            type: String,
+            required: true
+        }
+    },
     stock: {
         type: Number,
         required: [true, "Por favor registre el stock del televisor"],
@@ -41,27 +40,27 @@ const productosSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
-    reviews: 
-    [
-        {
-            customerID: {
-                type: String,
-                required: true
-            },
-            date: {
-                type: Date,
-                default: Date.now
-            },
-            rating: {
-                type: Number,
-                required: true
-            },
-            reviews: {
-                type: String,
-                required: true
+    reviews:
+        [
+            {
+                customerID: {
+                    type: String,
+                    required: true
+                },
+                date: {
+                    type: Date,
+                    default: Date.now
+                },
+                rating: {
+                    type: Number,
+                    required: true
+                },
+                reviews: {
+                    type: String,
+                    required: true
+                }
             }
-        }
-    ]
+        ]
 
 })
 
