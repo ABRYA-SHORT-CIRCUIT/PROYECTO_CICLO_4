@@ -1,8 +1,8 @@
-const app  = require('./app');
+const app = require('./app');
 const connectDataBase = require('./config/dataBase')
 
-const dotenv = require('dotenv')
-dotenv.config({path:'back/config/config.env'})
+const dotenv = require('dotenv');
+dotenv.config({ path: 'back/config/config.env' });
 
 //Configurar base de datos
 connectDataBase();
