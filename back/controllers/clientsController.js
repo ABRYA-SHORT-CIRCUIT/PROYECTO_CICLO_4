@@ -1,80 +1,150 @@
 const clientModel = require('../models/clientsDB');
+const errorHandler = require('../utils/ErrorHandler');
+const catchAsyncErrors = require('../middleware/catchAsyncErrors');
+const sentToken = require('../utils/jwtToken');
+const crypto = require("crypto");
 
 //Crear un nuevo usuario/cliente en la BD
-exports.createClient = async (req, res, next) => {
-    const newClient = await clientModel.create(req.body);
+exports.createUser = catchAsyncErrors(async (req, res, next) => {
+    const { name, email, password, _status } = req.body;
 
-    res.status(201).json({
-        success: true,
-        newClient
+    const newUser = await clientModel.create({
+        name,
+        email,
+        password,
+        _status     //Este valor se asignaría por defecto en 'activo'
     });
-}
 
-//Consultar todos los clientes en la BD
-exports.getClients = async (req, res, next) => {
-    const clientList = await clientModel.find().sort({ _id: -1 });
-    //Los resultados se ordenan por el _id, de forma descendente (1, para ascendente)
+    sentToken(newUser, 201, res)
+});
 
-    res.status(200).json({
-        suscess: true,
-        totalClients: clientList.length,
-        clientList
-    })
-}
+//Iniciar Sesion - Login
+exports.logInUser = catchAsyncErrors(async (req, res, next) => {
+    const { email, password } = req.body;
 
-//Consultar un solo usuario/cliente en la BD
-exports.getOneClient = async (req, res, next) => {
-    const client = await clientModel.findById(req.params.id);
-
-    if (!client) {
-        return res.status(404).json({
-            success: false,
-            message: 'El cliente no existe.',
-        });
+    //revisar si los campos estan completos
+    if (!email || !password) {
+        return next(new errorHandler("Por favor ingrese email & Contraseña", 400))
     }
 
-    res.status(200).json({
-        suscess: true,
-        client
-    })
-}
-
-//Actualizar la información de un usuario/cliente en la BD
-exports.updateClient = async (req, res, next) => {
-    let client = await clientModel.findById(req.params.id);
-
-    if (!client) {
-        return res.status(404).json({
-            success: false,
-            message: 'El cliente no existe.',
-        });
+    //Buscar al usuario en nuestra base de datos
+    const user = await clientModel.findOne({ email }).select("+password");
+    const passOK = await user.validatePass(password);
+    if (!user || !passOK) {
+        return next(new errorHandler("Email o contraseña invalidos", 401))
     }
-    client = await clientModel.findByIdAndUpdate(req.params.id, req.body, {
-        //Se actualizan solo los campos que hayan cambiado.
+
+    sentToken(user, 200, res)
+})
+
+//Cierre de sesión para cualquier tipo de usuario
+exports.logOutUser = catchAsyncErrors(async (req, res, next) => {
+    res.cookie("token", null, {
+        expires: new Date(Date.now()),
+        httpOnly: true
+    })
+
+    res.status(200).json({
+        success: true,
+        message: "Sesión Finalizada"
+    })
+})
+
+//Consultar la información propia de usuario
+exports.getSelfUser = catchAsyncErrors(async (req, res, next) => {
+    console.log(req.user);
+    const user = await clientModel.findById(req.user.id);
+
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Actualizar información personal de usuario
+exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
+    const img_index = Math.round(21 * Math.random()) + 1;
+
+    const newProfile = {
+        name: req.body.name,
+        email: req.body.email,
+        avatar: {
+            public_id: img_index,
+            url: './assets/images/avatar-' + img_index + '.svg'
+        }
+    }
+
+    const user = await clientModel.findByIdAndUpdate(req.user.id, newProfile, {
         new: true,
-        runValidators: true
-    });
+        runValidators: true,
+        useFindAndModify: false
+    })
 
     res.status(200).json({
         success: true,
-        client
-    });
-}
+        user
+    })
+})
 
-//Eliminar el usuario/cliente de la base de datos
-exports.deleteClient = async (req, res, next) => {
-    const client = await clientModel.findById(req.params.id);
+//Actualizar la contraseña de ingreso
+exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
+    const user = await clientModel.findById(req.user.id).select("+password");
 
-    if (!client) {
-        return res.status(404).json({
-            success: false,
-            message: 'El cliente no existe.',
-        });
+    //Revisamos si la contraseña vieja es igual a la nueva
+    const isEqual = await user.validatePass(req.body.oldPassword)
+
+    if (!isEqual) {
+        return next(new errorHandler("La nueva contraseña debe ser diferente a la anterior.", 401));
     }
-    await client.remove();
+
+    user.password = req.body.newPassword;
+    await user.save();
+
+    sentToken(user, 200, res)
+})
+
+//ACCIONES DE ADMIN Y/O SELLER
+
+//Consultar todos los usuarios
+exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
+    const users = await clientModel.find();
 
     res.status(200).json({
         success: true,
-        message: 'El cliente fue eliminado corectamente'
-    });
-}
+        users
+    })
+})
+
+//Consultar un usuario cualquiera
+exports.getAnyUser = catchAsyncErrors(async (req, res, next) => {
+    const user = await clientModel.findById(req.params.id);
+
+    if (!user) {
+        return next(new errorHandler(`Usuario inexistente`))
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Actualizar usuario (Solo puede cambiarle el rol y el status)
+exports.updateAnyUser = catchAsyncErrors(async (req, res, next) => {
+    const newInfo = {
+        role: req.body.role,
+        _status: req.body._status,
+    }
+
+    const user = await clientModel.findByIdAndUpdate(req.params.id, newInfo, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    })
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})

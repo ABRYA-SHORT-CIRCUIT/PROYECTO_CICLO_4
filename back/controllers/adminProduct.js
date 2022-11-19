@@ -1,5 +1,5 @@
 
-const adminProduct = require("../models/adminProduct");
+const adminProduct = require("../models/products");
 
 
 //Crear nuevo producto
